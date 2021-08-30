@@ -1,0 +1,95 @@
+
+
+<%- include('../includes/head.ejs') %>
+<%- include('../jQuery-validation/box.ejs') %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+   <div class="wrapper">
+      <%- include('../includes/nav.ejs') %> <%- include('../includes/aside.ejs')
+         %>
+      <div class="content-wrapper">
+         <section class="content-header">
+            <div class="container-fluid">
+               <div class="row mb-2">
+                  <div class="col-sm-6">
+                     <h1>
+                        Csomagolás
+                     </h1>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="content">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="card card-secondary">
+                        <div class="card-header">
+                           <h3 class="card-title">Csomagolás adatatok megadása</h3>
+                        </div>
+                        <form
+                           id="createBox_form"
+                           class="ms-content-wrapper"
+                           action="/admin/<% if (editing) { %>edit-box<% } else { %>add-box<% } %>"
+                           method="POST"
+                           enctype="multipart/form-data"
+                           >
+                           <div class="card-body">
+                              <div class="form-group">
+                                 <label for="price">Ár</label>
+                                 <input
+                                    type="text"
+                                    class="form-control extra_price_input price"
+                                    id="price"
+                                    name="price"
+                                    placeholder="Csomagolás ára"
+                                    autocomplete="off"
+                                    value="<% if (editing) { %><%= box[0].price %><% } %>"
+                                    />
+                                 <span
+                                    class="invalid-feedback"
+                                    id="price_error_message"
+                                    ></span>
+                              </div>
+                              <div class="form-group">
+                                 <label for="sku">Csomagolás neve</label>
+                                 <input
+                                    type="text"
+                                    class="form-control sku"
+                                    id="sku"
+                                    name="sku"
+                                    placeholder="Csomagolás neve"
+                                    value="<% if (editing) { %><%= box[0].sku %><% } %>"
+                                    />
+                                 <span
+                                    class="invalid-feedback"
+                                    id="sku_error_message"
+                                    ></span>
+                              </div>
+                              <div class="form-check"></div>
+                           </div>
+                           <% if (editing) { %>
+                           <input type="hidden" value="<%= boxId %>" name="boxId" />
+                           <% } %>
+                           <div class="card-footer">
+                              <button
+                                 id="createBox"
+                                 type="submit"
+                                 class="btn btn-secondary"
+                                 >
+                              Mentés
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <%- include('../includes/footer.ejs') %>
+   </div>
+   <%- include('../includes/end.ejs') %>
+</body>
+

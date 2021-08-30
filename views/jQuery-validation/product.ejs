@@ -1,0 +1,427 @@
+<script>
+  $(document).ready(function () {
+    $(".status-checkbox").click(function () {
+      var extraId = $(this).attr("data-extraId");
+      if ($(this).is(":checked")) {
+        $(".status-" + extraId).val("on");
+      } else {
+        $(".status-" + extraId).val("off");
+      }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    $(".statusAllergen-checkbox").click(function () {
+      var extraId = $(this).attr("data-allergenId");
+      if ($(this).is(":checked")) {
+        $(".statusAllergen-" + extraId).val("on");
+      } else {
+        $(".statusAllergen-" + extraId).val("off");
+      }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    $(".statusBox-checkbox").click(function () {
+      var extraId = $(this).attr("data-boxId");
+      if ($(this).is(":checked")) {
+        $(".statusBox-" + extraId).val("on");
+      } else {
+        $(".statusBox-" + extraId).val("off");
+      }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    var error_price = false;
+    $(".status-checkbox").click(function () {
+      var extraId = $(this).data("extraId");
+      console.log(extraId)
+      $("#price_error_message_" + extraId).hide();
+      error_price = false;
+    });
+    function check_variantInputs() {
+      var extraId = $(this).attr("data-extraId");
+      $(".extra_box").each(function () {
+        var extraId = $(this).data("extra");
+        var price_len = $(".price_" + extraId).val().length;
+        if ($(this).find("input:checkbox").is(":checked") && price_len < 1) {
+          if (price_len < 1) {
+            $("#price_error_message_" + extraId)
+              .show()
+              .html("Ár megadása kötelező!");
+              $( ".price_"+ extraId).addClass( "is-invalid" );
+            error_price = true;
+          } else {
+            $( ".price_"+ extraId).removeClass( "is-invalid" );
+            $("#price_error_message_" + extraId)
+              .hide();
+          }
+        } else {
+          $(this).find(".extra_error_message").hide();
+        }
+      });
+    }
+    $(".extra_price_input").focusout(function () {
+      var len = $(this).val().length;
+      var extraId = $(this).closest(".extra_box").data("extra");
+      if (len < 1) {
+        $( ".price_"+ extraId).addClass( "is-invalid" );
+        $("#price_error_message_" + extraId)
+          .show()
+          .html("Termék ára megadása kötelező!");
+          error_price = true;
+      } else {
+        $( ".price_"+ extraId).removeClass( "is-invalid" );
+        $("#price_error_message_" + extraId)
+          .hide();
+      }
+    });
+    $("#roName_error_message").hide();
+    $("#huName_error_message").hide();
+    $("#roDescription_error_message").hide();
+    $("#huDescription_error_message").hide();
+    $("#variant_error_message").hide();
+    $("#allergen_error_message").hide();
+    $("#image_error_message").hide();
+    $("#box_error_message").hide();
+    $("#file_error_message").hide();
+    $("#category_error_message").hide();
+    var error_roName = false;
+    var error_huName = false;
+    var error_roDescription = false;
+    var error_huDescription = false;
+    var error_variants = false;
+    var error_allergens = false;
+    var error_image = false;
+    var error_box = false;
+    var error_file = false;
+    var error_size = false;
+    var error_categoryId = false;
+    $("#roTitle").focusout(function () {
+      check_roName();
+    });
+    $("#huTitle").focusout(function () {
+      check_huName();
+    });
+    $("#roDescription").focusout(function () {
+      check_roDescription();
+    });
+    $("#huDescription").focusout(function () {
+      check_huDescription();
+    });
+    $(".status-checkbox").change(function () {
+      check_variant();
+    });
+    $(".statusAllergen-checkbox").change(function () {
+      check_allergen();
+    });
+    $(".status-hidden-box").change(function () {
+      check_box();
+    });
+    $("#image").change(function () {
+      check_file();
+    });
+    $("#image").change(function () {
+      check_file_size();
+    });
+    $("#categoryId").change(function () {
+      check_categoryId();
+    });
+    function check_roName() {
+      var roName_length = $("#roTitle").val().length;
+      if (roName_length < 2 || roName_length > 200) {
+           $( ".roTitle" ).addClass( "is-invalid" );
+           $("#roName_error_message").html("A termék neve legalább 2 és maximum 200 karakter lehet!");
+        $("#roName_error_message").show();
+        error_roName = true;
+      } else {
+        $( ".roTitle" ).removeClass( "is-invalid" );
+        $("#roName_error_message").hide();
+      }
+    }
+    function check_file() {
+      var vidFileLength = $("#image");
+      if (vidFileLength[0].files.length ==0  ) {
+        $( ".exampleInputFile" ).addClass( "is-invalid" );
+           $("#file_error_message").html("A fájl kiválasztása kötelező!");
+        $("#file_error_message").show();
+        error_file = true;
+      } else {
+        $( ".exampleInputFile" ).removeClass( "is-invalid" );
+        $("#file_error_message").hide();
+        error_file = false;
+      }
+      if(vidFileLength[0].files.length ==1){
+          var photoSize = $("#image")[0].files[0].size
+          if(photoSize >2000000){
+            $( ".exampleInputFile" ).addClass( "is-invalid" );
+           $("#file_error_message").html("A fájl mérete maximum 200 kb lehet");
+        $("#file_error_message").show();
+        error_file = true;
+          }else{
+            $( ".exampleInputFile" ).removeClass( "is-invalid" );
+        $("#file_error_message").hide();
+        error_file = false;
+          }
+        }
+    }
+    function check_huName() {
+      var huName_length = $("#huTitle").val().length;
+      if (huName_length < 2 || huName_length > 200) {
+        $( ".huTitle" ).addClass( "is-invalid" );
+           $("#huName_error_message").html("A termék neve legalább 2 és maximum 200 karakter lehet!");
+           $("#huName_error_message").show();
+        error_huName = true;
+      } else {
+        $( ".huTitle" ).removeClass( "is-invalid" );
+        $("#huName_error_message").hide();
+      }
+    }
+    function check_roDescription() {
+      var roDescription_length = $("#roDescription");
+      if (roDescription_length.val() === "") {
+        $( ".roDescription" ).addClass( "is-invalid" );
+           $("#roDescription_error_message").html("A termék leírását kötelező megadni!");
+           $("#roDescription_error_message").show();
+        error_roDescription = true;
+      } else {
+        $( ".roDescription" ).removeClass( "is-invalid" );
+        $("#roDescription_error_message").hide();
+      }
+    }
+    function check_huDescription() {
+      var huDescription_length = $("#huDescription");
+      if (huDescription_length.val() === "") {
+        $( ".huDescription" ).addClass( "is-invalid" );
+           $("#huDescription_error_message").html("A termék leírását kötelező megadni!");
+           $("#huDescription_error_message").show();
+        error_huDescription = true;
+      } else {
+        $( ".huDescription" ).removeClass( "is-invalid" );
+        $("#huDescription_error_message").hide();
+      }
+    }
+    function check_box() {
+      if ($(".status-hidden-box[value='on']").length > 1) {
+        $( ".boxesVal" ).addClass( "is-invalid" );
+           $("#box_error_message").html("A termékhez csak 1 csomagolást lehet megadni!");
+           $("#box_error_message").show();
+        error_box = true;
+        $("#createProduct").disabled = true;
+      } else {
+        $( ".boxesVal" ).removeClass( "is-invalid" );
+        $("#box_error_message").hide();
+        $("#createProduct").removeAttr("disabled");
+      }
+    }
+    function check_categoryId() {
+      var categoryId = $("#categoryId").val();
+      if (categoryId  == null) {
+           $( ".categoryIdCheck" ).addClass( "is-invalid" );
+           $("#error_categoryId").html("Legalább 1 kategória kiválasztása kötelező!");
+        $("#error_categoryId").show();
+        error_categoryId = true;
+      } else {
+        $( ".categoryIdCheck" ).removeClass( "is-invalid" );
+        $("#error_categoryId").hide();
+      }
+    }
+    function check_variant() {
+      if ($(".status-hidden[value='on']").length != 1) {
+        $( ".variantCheck" ).addClass( "is-invalid" );
+           $("#variant_error_message").html("A termékhez csak 1 variáns rendelhető!");
+           $("#variant_error_message").show();
+        error_variants = true;
+        $("#createProduct").disabled = true;
+      } else {
+        $( ".variantCheck" ).removeClass( "is-invalid" );
+        $("#variant_error_message").hide();
+        $("#createProduct").removeAttr("disabled");
+      }
+    }
+    function check_allergen() {
+      if ($(".status-hidden-allergen[value='on']").length < 1) {
+        $( ".allergenError" ).addClass( "is-invalid" );
+           $("#allergen_error_message").html("Legalább 1 allergént kötelezően ki kell választani!");
+        $("#allergen_error_message").show();
+        error_allergens = true;
+      } else {
+        $( ".allergenError" ).removeClass( "is-invalid" );
+        $("#allergen_error_message").hide();
+        $("#createProduct").removeAttr("disabled");
+      }
+    }
+    function check_file_size() {
+      var photoSize = $("#image")[0].files[0].size
+      if ( photoSize >2000000) {
+        $( ".exampleInputFile" ).addClass( "is-invalid" );
+           $("#file_error_message").html("A fájl mérete maximum 200 kb lehet");
+        $("#file_error_message").show();
+        error_size = true;
+      } else {
+        $( ".exampleInputFile" ).removeClass( "is-invalid" );
+        $("#file_error_message").hide();
+        error_size = false;
+      }
+    }
+    $("#product-form").submit(function () {
+      error_roName = false;
+      error_huName = false;
+      error_roDescription = false;
+      error_huDescription = false;
+      error_variants = false;
+      error_allergens = false;
+      error_size = false;
+      error_categoryId = false
+      <% if(!editing){ %>
+      error_file == false;
+      <% } %>
+      error_box = false;
+      error_price = false;
+      check_roName();
+      check_categoryId()
+      check_huName();
+      check_roDescription();
+      check_huDescription();
+      check_variant();
+      check_allergen();
+      <% if(!editing){ %>
+      check_file();
+      <% } %>
+      check_box();
+      check_variantInputs();
+      <% if(editing){ %>
+      check_file_size()
+      <% } %>
+      if (
+        error_roName == false &&
+        error_huName == false &&
+        error_roDescription == false &&
+        error_huDescription == false &&
+        error_variants == false &&
+        error_size == false &&
+        error_allergens == false &&
+        error_box == false &&
+        <% if(!editing){ %>
+        error_file == false &&
+        <% } %>
+        error_price == false &&
+        error_categoryId == false
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  });
+</script>
+<% if(editing){ %>
+<script>
+  $(document).ready(function () {
+    const categoryId = $("#categoryId").val();
+    $(".category-all").hide();
+    $(".category-<%= currentCat %>").show();
+    if (true) {
+      $(document).ready(function () {
+        $("#categoryId").on("change", function () {
+          const categoryId = $("#categoryId").val();
+          $(".category-all").hide();
+          $(".category-" + categoryId).show();
+        });
+      });
+    }
+  });
+</script>
+<% } else{ %>
+<script>
+  $(document).ready(function () {
+    $("#categoryId").on("change", function () {
+      const categoryId = $("#categoryId").val();
+      $(".category-all").hide();
+      $(".category-" + categoryId).show();
+      $(".status-checkbox").prop("checked", false);
+      $(".status-hidden").val("off");
+    });
+  });
+</script>
+<% } %>
+
+<script>
+  $(document).ready(function () {
+    $(".status-checkbox-option").click(function () {
+      var optionId = $(this).attr("data-optionId");
+      if ($(this).is(":checked")) {
+        $(".statusOption" + optionId).val("on");
+      } else {
+        $(".statusOption" + optionId).val("off");
+      }
+    });
+  });
+</script>
+
+<script>
+  document
+    .querySelectorAll(".statusBox-checkbox")
+    .forEach((element) => element.addEventListener("click", disableOther));
+  function disableOther(event) {
+    //"event" is current event(click)
+    //"event.target" is our clicked element
+    if (event.target.checked) {
+      // if current input is checked -> disable ALL inputs
+      document
+        .querySelectorAll(".statusBox-checkbox")
+        .forEach((element) => (element.disabled = true));
+      // enabling our current input
+      event.target.disabled = false;
+    } else {
+      // if current input is NOT checked -> enabling ALL inputs
+      document
+        .querySelectorAll(".statusBox-checkbox")
+        .forEach((element) => (element.disabled = false));
+    }
+  }
+</script>
+<% if(editing){ %> <% if(product[0].isDailyMenu ==1){ %>
+<script>
+  $(document).ready(function () {
+    $(".isDailyMenu").prop("checked", true);
+    $(".answer").show();
+  });
+</script>
+<% } %> <% } %> <% if (editing) { %> <% for (let i = 0; i <
+isActiveVariant.length; i++) { %> <% if (isActiveVariant[i].active ==1) { %>
+<script>
+  $(document).ready(function () {
+    var activeCheckbox = "<%= isActiveVariant[i].variantId %>";
+    $(".status-checkbox-" + activeCheckbox).prop("checked", true);
+    $(".status-" + activeCheckbox).val("on");
+  });
+</script>
+<% } %> <% } %> <% } %> <% if (editing) { %> <% for (let i = 0; i <
+boxEnabled.length; i++) { %> <% if (boxEnabled[i].boxId !=undefined) { %>
+<script>
+  $(document).ready(function () {
+    var activeCheckbox = "<%= boxEnabled[i].boxId %>";
+    $(".statusBox-checkbox-" + activeCheckbox).prop("checked", true);
+    $(".statusBox-" + activeCheckbox).val("on");
+  });
+</script>
+<% } %> <% } %> <% } %> <% if (editing) { %> <% for (let i = 0; i <
+allergenArray.length; i++) { %> <% if
+(allergenArray[i].ProductHasAllergens[0].active == 1) { %>
+<script>
+  $(document).ready(function () {
+    var activeCheckbox =
+      "<%= allergenArray[i].ProductHasAllergens[0].allergenId %>";
+    $(".statusAllergen-checkbox-" + activeCheckbox).prop("checked", true);
+    $(".statusAllergen-" + activeCheckbox).val("on");
+  });
+</script>
+<% } %> <% } %> <% } %>

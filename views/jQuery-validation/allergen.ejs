@@ -1,0 +1,69 @@
+<script>
+  $(function () {
+    $("#roName_error_message").hide();
+    $("#huName_error_message").hide();
+
+    var error_roName = false;
+    var error_huName = false;
+    $("#roName").focusout(function () {
+      check_roName();
+    });
+
+    $("#huName").focusout(function () {
+      check_huName();
+    });
+
+    function check_roName() {
+      var roName_length = $("#roName").val().length;
+
+      if (roName_length < 1 || roName_length > 700) {
+        $(".roName").addClass("is-invalid");
+        $("#roName_error_message").html(
+          "Allergén román nevének megadása kötelező!"
+        );
+        $("#roName_error_message").show();
+        error_roName = true;
+      } else {
+        $(".roName").removeClass("is-invalid");
+        $("#roName_error_message").hide();
+      }
+    }
+
+    function check_huName() {
+      var huName_length = $("#huName").val().length;
+
+      if (huName_length < 1 || huName_length > 700) {
+        $(".huName").addClass("is-invalid");
+        $("#huName_error_message").html(
+          "Allergén magyar nevének megadása kötelező!"
+        );
+        $("#huName_error_message").show();
+        error_huName = true;
+      } else {
+        $(".huName").removeClass("is-invalid");
+        $("#huName_error_message").hide();
+      }
+    }
+
+    $("#createAllergen_form").submit(function () {
+      error_roName = false;
+      error_huName = false;
+
+      check_roName();
+      check_huName();
+
+      if (error_roName == false && error_huName == false) {
+        $("#createBox").prop("disabled", true);
+
+        return true;
+      } else {
+        return false;
+      }
+    });
+  });
+</script>
+<style>
+  .intro {
+    border-color: red;
+  }
+</style>

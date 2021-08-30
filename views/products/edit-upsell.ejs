@@ -1,0 +1,371 @@
+
+
+<%- include('../includes/head.ejs') %>
+<%- include('../jQuery-validation/product.ejs') %>
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('../includes/nav.ejs') %> <%- include('../includes/aside.ejs')
+            %>
+        <form
+            name="myForm"
+            class="ms-content-wrapper"
+            action="/admin/<% if (editing) { %>edit-upsell<% } else { %>add-upsell<% } %>"
+            method="POST"
+            enctype="multipart/form-data"
+            id="product-form"
+            >
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Termék</h1>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- left column -->
+                            <div class="col-md-6">
+                                <!-- general form elements -->
+                                <div class="card card-secondary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Termék fő adatai</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="roTitle">Termék román neve</label>
+                                            <input
+                                                type="text"
+                                                class="form-control roTitle"
+                                                id="roTitle"
+                                                name="roTitle"
+                                                placeholder="Termék román neve"
+                                                value="<% if (editing) { %><%= product[0].ProductTranslations[0].title %><% } %>">
+                                                <span class="invalid-feedback" id="roName_error_message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="huTitle">Termék magyar neve</label>
+                                            <input
+                                                type="text"
+                                                class="form-control huTitle"
+                                                id="huTitle"
+                                                name="huTitle"
+                                                placeholder="Termék magyar neve"
+                                                value="<% if (editing) { %><%= product[0].ProductTranslations[1].title %><% } %>">
+                                                <span class="invalid-feedback" id="huName_error_message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>Termék román leírása</label>
+                                                <textarea
+                                                    class="form-control roDescription"
+                                                    rows="3"
+                                                    id="roDescription"
+                                                    name="roDescription"
+                                                    placeholder="Termék román leírása"
+                                                    ><% if (editing) { %><%= product[0].ProductTranslations[0].description %><% } %></textarea>
+                                                    <span class="invalid-feedback" id="roDescription_error_message"></span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>Termék magyar leírása</label>
+                                                <textarea
+                                                    class="form-control huDescription"
+                                                    rows="3"
+                                                    id="huDescription"
+                                                    name="huDescription"
+                                                    placeholder="Termék magyar leírása"
+                                                    ><% if (editing) { %><%= product[0].ProductTranslations[1].description %><% } %></textarea>
+                                                    <span class="invalid-feedback" id="huDescription_error_message"></span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Termék fényképe</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input
+                                                        accept="image/png, image/jpeg,image/jpeg" filesize=2 type="file" name="image" id="image"
+                                                        type="file"
+                                                        class="custom-file-input exampleInputFile"
+                                                        id="exampleInputFile"
+                                                        />
+                                                    <label
+                                                        class="custom-file-label"
+                                                        for="exampleInputFile"
+                                                        >Fénykép kiválasztása</label
+                                                        >
+                                                        
+                                                </div>
+                                                <span class="invalid-feedback" id="file_error_message"></span>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-secondary">
+                                        Mentés
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.col (left) -->
+                            <!-- right column -->
+                            <div class="col-md-6">
+                                <!-- /.card -->
+                                <!-- general form elements disabled -->
+                                <div class="card card-secondary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Csomagolás</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="form-group boxesVal">
+                                            <%  for (let i = 0; i <boxArray.length; i++) { %>
+                                            <input
+                                                type="hidden"
+                                                value="<%= boxArray[i].id %>"
+                                                name="boxId"
+                                                />
+                                            <input type="hidden" value="off" class="statusBox-<%= boxArray[i].id %> status-hidden-box" name="statusBox[<%= boxArray[i].id %>]" >
+                                            <div
+                                                class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                                                >
+                                                <input
+                                                    data-boxId="<%= boxArray[i].id %>"
+                                                    type="checkbox"
+                                                    class="custom-control-input statusBox-checkbox statusBox-checkbox-<%= boxArray[i].id %>"
+                                                    id="boxId<%= boxArray[i].sku %>"
+                                                    />
+                                                <label
+                                                    class="custom-control-label"
+                                                    for="boxId<%= boxArray[i].sku %>"
+                                                    ><%= boxArray[i].sku %>: <%= boxArray[i].price %> RON</label
+                                                    >
+                                            </div>
+                                            <% } %>
+                                            <span class="invalid-feedback" id="box_error_message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"></div>
+                                </div>
+                                <div class="card card-secondary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Allergének</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="form-group allergenError">
+                                            <%  for (let i = 0; i <allergenArray.length; i++) { %>
+                                            <input
+                                                type="hidden"
+                                                value="<%= allergenArray[i].id %>"
+                                                name="allergenId"
+                                                /> 
+                                            <div
+                                                class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                                                >
+                                                <input type="hidden" value="off" class="statusAllergen-<%= allergenArray[i].id %>  status-hidden-allergen" name="statusAllergen[<%= allergenArray[i].id %>]" >
+                                                <input
+                                                    data-allergenId="<%= allergenArray[i].id %>"
+                                                    type="checkbox"
+                                                    class="custom-control-input statusAllergen-checkbox statusAllergen-checkbox-<%= allergenArray[i].id %>"
+                                                    id="boxId<%= allergenArray[i].id %>"
+                                                    />
+                                                <label
+                                                    data-extra="<%= allergenArray[i].id %>"
+                                                    class="custom-control-label"
+                                                    for="boxId<%= allergenArray[i].id %>"
+                                                    ><%= allergenArray[i].AllergenTranslations[0].name %></label
+                                                    >
+                                            </div>
+                                            <% } %>
+                                            <span class="invalid-feedback" id="allergen_error_message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"></div>
+                                </div>
+                                <% if (editing) { %>
+                                <div class="card card-secondary">
+                                 <div class="card-header">
+                                     <h3 class="card-title">Termék képe</h3>
+                                 </div>
+                                 <!-- /.card-header -->
+                                 <div class="card-body">
+                                     <div class="form-group">
+                                       <img class="img-fluid" style="max-height: 292px !important;" src="/<%= product[0].productImagePath %>" alt="Photo">
+                                     </div>
+                                 </div>
+                                 <div class="form-group"></div>
+                             </div>
+                             <% } %>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <% if (editing) { %>
+                        <script>
+                            $(document).ready(function () {
+                            
+                            $("select#categoryId").val("<% if (editing) { %><%=  currentCat %><% } %>");
+                            });
+                        </script> 
+                        <input
+                            type="hidden"
+                            value="<%= productIds %>"
+                            name="productId"
+                            />
+                        <% } %>
+                        <!--/.col (right) -->
+                        <div class="col-md-6">
+                            <!-- select -->
+                            <div class="form-group variantCheck">
+                                <label>Kategória választás</label>
+                                <select for="categoryId" id="categoryId" name="categoryId" class="custom-select category_select categoryId">
+                                    <option selected disabled>Válassz egyet</option>
+                                    <% for(let i = 0; i < cat.length; i++) { %>
+                                    <option id="categoryId" name="categoryId" value='<%= cat[i].id %>'><%= cat[i].CategoryTranslations[0].name %></option>
+                                    <% } %>
+                                </select>
+                                <span class="invalid-feedback" id="variant_error_message"></span><br>
+                                <span class="invalid-feedback" id="error_categoryId"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <% if (editing) { %>
+                    <div class="row">
+                        <% for (let i = 0; i < productVariant.length; i++) { %>
+                        <input
+                            type="hidden"
+                            value="<%= productVariant[i].id %>"
+                            name="variantIdUp"
+                            />   
+                        <div class="col-md-3 extra_box category-<%= productVariant[i].categoryId %> category-all" data-extra="<%= productVariant[i].id %>">
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong><%= productVariant[i].sku %></strong></h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                                            >
+                                            <input id="variantChx" type="hidden" value="off" class="status-<%= productVariant[i].id %> status-hidden" name="status[<%= productVariant[i].id %>]" >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input status-checkbox status-checkbox-<%= productVariant[i].id %>"
+                                                id="variantSwitch<%= productVariant[i].id %>"
+                                                data-extraId="<%= productVariant[i].id %>"
+                                                />
+                                            <label
+                                                class="custom-control-label"
+                                                for="variantSwitch<%= productVariant[i].id %>"
+                                                >Aktiv (ha zöld)</label
+                                                >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Termék ára</label>
+                                        <input
+                                            type="text"
+                                            class="form-control price_<%= productVariant[i].id %> product_price_input"
+                                            id="price"
+                                            name="price"
+                                            placeholder="Termék ára"
+                                            value="<% if (editing) { %><%= netest[i].price %><% } %>"
+                                            />
+                                            <span class="invalid-feedback" id="price_error_message<%= productVariant[i].id %>"></span>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <% } %>
+                    </div>
+                    <% } else { %>
+                     <div class="row">
+                        <% for (let extra of ext) { %>
+                           <input
+                           type="hidden"
+                           value="<%= extra.id %>"
+                           name="extraId"
+                           id="extraIdJq"
+                           />      
+                        <div class="col-md-3 extra_box category-<%= extra.categoryId %> category-all" data-extra="<%= extra.id %>">
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong><%= extra.sku %></strong></h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                                            >
+                                            <input id="variantNumber_<%= extra.id %>" type="hidden" value="off" class="status-<%= extra.id %> status-hidden" name="status[<%= extra.id %>]" >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input status-checkbox variants status-checkbox-<%= extra.id %>"
+                                                id="variantSwitch<%= extra.id %>"
+                                                data-extraId="<%= extra.id %>"
+                                                />
+                                            <label
+                                                class="custom-control-label"
+                                                for="variantSwitch<%= extra.id %>"
+                                                >Aktiv (ha zöld)</label
+                                                >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Termék ára</label>
+                                        <input
+                                            type="text"
+                                            class="form-control price_<%= extra.id %> product_price_input"
+                                            id="price"
+                                            name="price"
+                                            placeholder="Termék ára"
+                                            value="<% if (editing) { %><%= extra.price %><% } %>"
+                                            />
+                                            <span class="invalid-feedback" id="price_error_message_<%= extra.id %>"></span>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <% } %>
+                    </div>
+                     <% } %>
+                    <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+    </div>
+    </form>
+    <!-- /.content-wrapper -->
+    <%- include('../includes/footer.ejs') %>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+
+    </aside>
+
+    </div>
+    
+
+  <%- include('../includes/end.ejs') %>
+

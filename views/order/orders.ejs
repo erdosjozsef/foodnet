@@ -1,0 +1,3292 @@
+
+
+<!DOCTYPE html>
+<html lang="ro">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="robots" content="index,follow" />
+      <meta name="googlebot" content="NOODP" />
+      <!-- CSS only -->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+         crossorigin="anonymous"
+         />
+      <!-- JavaScript Bundle with Popper -->
+      <script
+         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+         crossorigin="anonymous"
+         ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+         crossorigin="anonymous"
+         ></script>
+      <script
+         src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous"
+         ></script>
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script
+         type="text/javascript"
+         src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+         ></script>
+      <script
+         type="text/javascript"
+         src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"
+         ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   </head>
+   <body>
+      <style>
+         body {
+         background: #eee;
+         }
+         .encodedKey {
+         font-size: 18px;
+         }
+         .details {
+         cursor: pointer;
+         }
+         .sub-column1 .move-order-prev {
+         display: none;
+         }
+         .sub-column2 .move-order-prev {
+         display: none;
+         }
+         .sub-column5 .move-order-next {
+         display: none;
+         }
+         .move-order-next {
+         float: right !important;
+         }
+         .move-order-prev {
+         float: left !important;
+         }
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         @font-face {
+         font-family: "poppins";
+         src: url(../font/poppins.ttf) format("truetype");
+         }
+         /* Start arrows media */
+         @media (min-width:1400px) and (max-width:1800px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -155px !important;
+         padding-top: 5px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+
+         .move-order-next{
+         padding-top: 5px;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px;
+         }
+         .encodedKey{
+         padding-left: 60px;
+         }
+         }
+         @media (min-width:1200px) and (max-width:1399px) {
+         .column1 {
+         width: 25% !important;
+         }
+         .move-order-next-left-elkeszitve{
+         margin-left: -168px !important;
+         padding-top: 5px;
+         }
+         .move-order-next{
+         padding-top: 5px;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px;
+         }
+         .encodedKey{
+         padding-left: 72px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:1100px) and (max-width:1199px) {
+         .column1 {
+         width: 31.2% !important;
+         }
+         .move-order-next-left-elkeszitve{
+         margin-left: -178px !important;
+         padding-top: 5px;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px;
+         }
+         .encodedKey{
+         padding-left: 70px;
+         font-size: 17px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:1025px) and (max-width:1099px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -191px !important;
+         padding-top: 5px;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px;
+         }
+         .encodedKey{
+         padding-left: 82px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:992px) and (max-width:1024px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -190px !important;
+         padding-top: 5px;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px;
+         }
+         .encodedKey{
+         padding-left: 83px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:768px) and (max-width:991px) {
+         .funarrow{
+         margin-left: 175px !important;
+         }
+         .move-order-next-left-elkeszitve{
+         margin-left: -135px !important;
+         margin-top: -27px !important;
+         padding-top: 4px !important;
+         }
+         /* .move-order-next-right-elkeszitve{
+         padding-top: 6px !important;
+         } */
+         .encodedKey-elkeszitve{
+         padding-left: 44px !important;
+         margin-top: -21px !important;
+         } 
+         .extraStyleCode{
+          padding: 3.2px !important;
+         }
+         /* #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         #column-5 .encodedKey-elkeszitve{
+          padding-left: 4px !important;
+          margin-top: -1px !important;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+      
+          margin-top: -7px !important;
+         } */
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:761px) and (max-width:767px) {
+         .column1{
+         width: 49.333% !important;
+         }
+         .move-order-next-left-elkeszitve{
+         margin-left: -152px !important;
+         padding-top: 5px !important
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px !important
+         }
+         .encodedKey-elkeszitve{
+         padding-left: 62px !important;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:576px) and (max-width:760px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -195px !important;
+         padding-top: 5px !important
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px !important
+         }
+         .encodedKey-elkeszitve{
+         padding-left: 33px !important;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:561px) and (max-width:575px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -199px !important;
+         padding-top: 30px !important;
+         margin-top: -25px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px !important;
+         margin-right: 9px !important;
+         }
+         .encodedKey-elkeszitve{
+         padding-left: 36px !important;
+         /* margin-top: -5px !important; */
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:552px) and (max-width:560px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -194px !important;
+         padding-top: 30px !important;
+         margin-top: -25px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px !important;
+         margin-right: 9px !important;
+         }
+         .encodedKey-elkeszitve{
+         padding-left: 36px !important;
+         /* margin-top: -5px !important; */
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:528px) and (max-width:551px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -180px !important;
+         padding-top: 5px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         margin-right: 10px !important;
+         padding-top: 5px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 18px;
+          font-size: 18px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:515px) and (max-width:527px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -177px !important;
+         padding-top: 5px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         margin-right: 10px !important;
+         padding-top: 5px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 32px;
+          font-size: 18px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:495px) and (max-width:514px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -173px !important;
+         padding-top: 5px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         margin-right: 10px !important;
+         padding-top: 5px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 32px;
+          font-size: 18px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:471px) and (max-width:494px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -165px !important;
+         padding-top: 5px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 5px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 33px;
+          font-size: 17px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:430px) and (max-width:470px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -150px !important;
+         padding-top: 4px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 4px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 31px;
+          font-size: 17px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:418px) and (max-width:429px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -140px !important;
+         padding-top: 4px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 4px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 26px;
+          font-size: 16px;
+         }
+         /* #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         } */
+         }
+         @media (min-width:407px) and (max-width:417px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -135px !important;
+         padding-top: 4px !important;
+         }
+         .move-order-next-right-elkeszitve{
+         padding-top: 4px !important;
+         }
+         .encodedKey-elkeszitve{
+          padding-left: 28px;
+          font-size: 16px;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         @media (min-width:393px) and (max-width:406px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -127px !important;
+         margin-top: -17px !important;
+         width: 11% !important;
+         }
+         .move-order-next-right-elkeszitve{
+          padding-right: 10px !important;
+          width: 18% !important;
+         }
+         .encodedKey-elkeszitve{
+          margin-top: -17px !important;
+          font-size: 14px !important;
+          padding-left: 23px !important;
+         }
+         .sub-column2 h4 p{
+          margin-top: 0px !important;
+          font-size: 14px !important;
+          padding-left: 23px !important;
+         }
+         .sub-column3 h4 p{
+          /* margin-top: 0px !important; */
+          margin-left: 2px !important;
+         }
+         .sub-column4 h4 p{
+          margin-left: 2px !important;
+         }
+         .sub-column5 h4 p{
+          padding-top: 18px;
+         }
+         .sub-column5 .move-order-next {
+          margin-top: 1px !important;
+         }
+         .sub-column1 h4 p{
+          margin-left: 2px !important;
+         }
+         .sub-column5 .move-order-next-left-elkeszitve{
+          margin-left: 0px !important;
+          margin-top: 0px !important;
+         }
+
+         /* #column-3 .move-order-next-left-elkeszitve{
+          margin-left: -127px !important;
+          margin-top: 0px !important;
+          width: 11% !important;
+         } */
+         
+         
+         }
+         @media (min-width:385px) and (max-width:392px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -122px !important;
+         margin-top: -17px !important;
+         width: 11% !important;
+         }
+         .move-order-next-right-elkeszitve{
+          padding-right: 10px !important;
+          width: 18% !important;
+         }
+         .encodedKey-elkeszitve{
+          margin-top: -17px !important;
+          font-size: 14px !important;
+          padding-left: 23px !important;
+         }
+         /* #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         } */
+         }
+         @media (min-width:373px) and (max-width:384px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -119px !important;
+         margin-top: -17px !important;
+         width: 12% !important;
+         }
+         .move-order-next-right-elkeszitve{
+          padding-right: 10px !important;
+          width: 18% !important;
+         }
+         .encodedKey-elkeszitve{
+          margin-top: -17px !important;
+          font-size: 14px !important;
+          padding-left: 23px !important;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         .sub-column2 h4 p{
+           margin-left: 2px !important;
+         }
+         .sub-column3 h4 p{
+          margin-left: 2px !important;
+         }
+         .sub-column4 h4 p{
+          margin-left: 2px !important;
+         }
+         .sub-column5 h4 p{
+          padding-top: 18px;
+         }
+         .sub-column5 .move-order-prev {
+          margin-top: 1px !important;
+         }
+         .sub-column1 h4 p{
+          margin-left: 2px !important;
+         }
+         }
+         @media (min-width:33px) and (max-width:374px) {
+         .move-order-next-left-elkeszitve{
+         margin-left: -113px !important;
+         margin-top: -16px !important;
+         width: 11% !important;
+         }
+         .move-order-next-right-elkeszitve{
+          padding-right: 10px !important;
+          width: 18% !important;
+         }
+         .encodedKey-elkeszitve{
+          margin-top: -18px !important;
+          font-size: 14px !important;
+          padding-left: 23px !important;
+         }
+         #column-5 .move-order-next-left-elkeszitve{
+         margin-left: 0px !important;
+         }
+         }
+         
+         body,
+         html {
+         font-family: "poppins";
+         font-size: 14px;
+         line-height: 20px;
+         font-weight: 400;
+         color: #000;
+         overflow-x: hidden;
+         height: 100%;
+         }
+         .main-container {
+         float: left;
+         width: 100%;
+         background: #eee;
+         padding: 10px 0px;
+         }
+         .column1 img {
+         cursor: pointer;
+         }
+         .container {
+         width: 96%;
+         margin: 0px auto;
+         }
+         .column1 {
+         width: 20%;
+         padding-left: 8px;
+         padding-right: 8px;
+         float: left;
+         }
+         .column1 h2 {
+         font-family: Poppins;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 700;
+         letter-spacing: 0em;
+         text-align: center;
+         color: #000;
+         margin-bottom: 20px;
+         margin-top: 10px;
+         }
+         .sub-column1 {
+         border-radius: 5px;
+         /* border: 3px solid #CE4141; */
+         background: #ce4141;
+         float: left;
+         width: 100%;
+         padding: 7px;
+         min-height: 200px;
+         }
+         .sub-column1 h4 {
+         float: left;
+         width: 100%;
+         background: #763269;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+         padding: 5px;
+         border-bottom: 1px solid #fff;
+         }
+         .sub-column1 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 90%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .inner-sub-column {
+         float: left;
+         width: 100%;
+         }
+         .sub-column2 {
+         border-radius: 5px;
+         /* border: 3px solid #CE4141; */
+         background: #a1ccd6;
+         float: left;
+         width: 100%;
+         padding: 7px;
+         min-height: 200px;
+         }
+         .sub-column2 h4 {
+         float: left;
+         width: 100%;
+         background: #5e7bb8;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+         padding: 5px;
+         border-bottom: 1px solid #fff;
+         }
+         .sub-column2 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 90%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column1 h4 span {
+         float: right;
+         /* width: 20%; */
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         width: 10%;
+         }
+         .sub-column1 .details {
+         background: #a68da1;
+         padding: 10px 5px;
+         }
+         .details h3 {
+         float: left;
+         font-weight: normal;
+         width: 100%;
+         }
+         .details h3 label {
+         float: left;
+         font-size: 15px;
+         }
+         .details p {
+         float: left;
+         font-size: 15px;
+         margin-bottom: 2px;
+         width: 100%;
+         }
+         .details b {
+         float: left;
+         font-weight: normal;
+         font-size: 13px;
+         }
+         .details b {
+         float: left;
+         font-weight: normal;
+         font-size: 13px;
+         margin: 0px 5px;
+         margin-bottom: 2px;
+         }
+         .details h5 {
+         background: red;
+         float: left;
+         /* width: 80%; */
+         /* clear: both; */
+         padding: 3px;
+         border-radius: 5px;
+         color: #fff;
+         font-size: 13px;
+         font-weight: 500;
+         margin-bottom: 3px;
+         margin-top: 3px;
+         }
+         .details h6 {
+         float: left;
+         width: 100%;
+         font-size: 15px;
+         font-weight: 600;
+         margin-top: 5px;
+         }
+         .details {
+         margin-bottom: 10px;
+         float: left;
+         width: 100%;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         }
+         .sub-column2 .details {
+         background: #9ea9c0;
+         padding: 10px 5px;
+         }
+         .details p span {
+         text-decoration: underline;
+         }
+         .sub-column3 {
+         border-radius: 5px;
+         /* border: 3px solid #CE4141; */
+         background: #efba6a;
+         float: left;
+         width: 100%;
+         padding: 7px;
+         min-height: 200px;
+         }
+         /* .sub-column2 h4 span {
+         float: right;
+         width: 10%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         .sub-column3 h4 span {
+         float: left;
+         width: 15%;
+         margin: 3px 0px 0px;
+         padding: 0px 2px;
+         text-align: center;
+         } */
+         .sub-column3 .details {
+         background: #ada4a9;
+         padding: 10px 5px;
+         }
+         .sub-column3 h4 {
+         float: left;
+         width: 100%;
+         background: #88727e;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+         padding: 5px;
+         border-bottom: 1px solid #fff;
+         }
+         .sub-column3 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 70%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column4 .details {
+         background: #bdb7b0;
+         padding: 10px 5px;
+         }
+         .sub-column4 {
+         border-radius: 5px;
+         /* border: 3px solid #CE4141; */
+         background: #7e6b55;
+         float: left;
+         width: 100%;
+         padding: 7px;
+         min-height: 200px;
+         }
+         .sub-column4 h4 {
+         float: left;
+         width: 100%;
+         background: #926335;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+         padding: 5px;
+         border-bottom: 1px solid #fff;
+         }
+         .sub-column4 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 70%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         /* .sub-column4 h4 span {
+         float: left;
+         width: 15%;
+         margin: 3px 0px 0px;
+         text-align: center;
+         padding: 0px 2px;
+         } */
+         .sub-column5 .details {
+         background: #c0bdaf;
+         padding: 10px 5px;
+         }
+         .sub-column5 {
+         border-radius: 5px;
+         /* border: 3px solid #CE4141; */
+         background: #a2c557;
+         float: left;
+         width: 100%;
+         padding: 7px;
+         min-height: 200px;
+         }
+         .sub-column5 h4 {
+         float: left;
+         width: 100%;
+         background: #a69336;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+         padding: 5px;
+         border-bottom: 1px solid #fff;
+         }
+         .sub-column5 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 90%;
+         float: right;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         /* .sub-column5 h4 span {
+         float: left;
+         width: 10%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         } */
+         .height {
+         height: 400px;
+         }
+         @media (max-width: 760px) {
+         .sub-column1 h4 span {
+         width: 15%;
+         }
+         .sub-column1 h4 p {
+         width: 85%;
+         }
+         .sub-column2 h4 span {
+         width: 15%;
+         }
+         .sub-column2 h4 p {
+         width: 85%;
+         }
+         .sub-column3 h4 span {
+         width: 15%;
+         }
+         .sub-column3 h4 p {
+         width: 85%;
+         }
+         .sub-column4 h4 span {
+         width: 15%;
+         }
+         .sub-column4 h4 p {
+         width: 85%;
+         }
+         .sub-column5 h4 span {
+         width: 15%;
+         }
+         .sub-column5 h4 p {
+         width: 85%;
+         }
+         .container {
+         width: 99%;
+         margin: 0px auto;
+         }
+         .column1:nth-child(2n + 3) {
+         clear: both;
+         }
+         .details p {
+         float: left;
+         font-size: 11px;
+         margin-bottom: 2px;
+         width: 100%;
+         line-height: 16px;
+         }
+         .details h3 {
+         float: left;
+         font-weight: normal;
+         width: 100%;
+         line-height: 16px;
+         }
+         .column1 {
+         width: 50%;
+         padding-left: 3px;
+         padding-right: 3px;
+         float: left;
+         }
+         .column1 h2 {
+         font-family: Poppins;
+         font-size: 15px;
+         font-style: normal;
+         font-weight: 700;
+         /* line-height: 38px; */
+         letter-spacing: 0em;
+         text-align: center;
+         color: #000;
+         margin-bottom: 5px;
+         margin-top: 10px;
+         }
+         .details h3 label {
+         float: left;
+         font-size: 11px;
+         }
+         }
+         @media only screen and (min-width: 761px) and (max-width: 1099px) {
+         .column1 {
+         width: 33.333%;
+         padding-left: 8px;
+         padding-right: 8px;
+         float: left;
+         }
+         .column1:nth-child(3n + 4) {
+         clear: both;
+         }
+         }
+         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+         .column1 {
+         width: 33.33%;
+         padding-left: 8px;
+         padding-right: 8px;
+         float: left;
+         }
+         .column1:nth-child(3n + 4) {
+         clear: both;
+         }
+         .column1 h2 {
+         font-family: Poppins;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 700;
+         letter-spacing: 0em;
+         text-align: center;
+         color: #000;
+         margin-bottom: 20px;
+         margin-top: 20px;
+         }
+         .sub-column2 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 85%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column2 h4 span {
+         float: right;
+         width: 15%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         .sub-column1 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 85%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column1 h4 span {
+         float: right;
+         width: 15%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         .sub-column3 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 80%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column3 h4 span {
+         float: left;
+         width: 10%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         .sub-column4 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 80%;
+         float: left;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column4 h4 span {
+         float: left;
+         width: 10%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         .sub-column5 h4 p {
+         color: #fff;
+         text-align: center;
+         width: 85%;
+         float: right !important;
+         /* text-align: center; */
+         margin: 3px 0px;
+         }
+         .sub-column5 h4 span {
+         float: right;
+         width: 15%;
+         margin: 3px 0px 0px;
+         text-align: left;
+         padding: 0px 2px;
+         }
+         }
+         /* modal-popup-open */
+         .button {
+         border: none;
+         display: inline-block;
+         vertical-align: middle;
+         overflow: hidden;
+         text-decoration: none;
+         color: inherit;
+         background-color: inherit;
+         text-align: center;
+         cursor: pointer;
+         white-space: nowrap;
+         color: #931414;
+         background: #fff;
+         border-radius: 50%;
+         padding: 5px;
+         }
+         .modal-content {
+         margin: auto;
+         position: relative;
+         padding: 0;
+         outline: 0;
+         width: 70%;
+         }
+         .modal {
+         /* z-index: 3; */
+         display: none;
+         padding-top: 60px;
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         background-color: rgb(0, 0, 0);
+         background-color: rgba(0, 0, 0, 0.4);
+         }
+         .container {
+         padding: 35px 10px;
+         }
+         .display-topright {
+         position: absolute;
+         right: -7px;
+         top: -14px;
+         font-size: 35px;
+         }
+         .cus-details1 td img {
+         float: left;
+         margin: 2px 4px 0px 0px;
+         }
+         .mains-contain {
+         float: left;
+         width: 100%;
+         background-color: #e5e5e5;
+         padding: 15px;
+         }
+         .mains-contain h4 {
+         background: #931414;
+         color: #fff;
+         padding: 5px 10px;
+         font-weight: 600;
+         border-radius: 5px;
+         float: left;
+         width: 100%;
+         }
+         .tabl1 {
+         float: left;
+         margin: 10px 0px 0px;
+         width: 100%;
+         }
+         .tabl1 td span {
+         color: #cb6262;
+         }
+         .bill-pay {
+         float: left;
+         width: 100%;
+         padding: 10px 0px;
+         text-align: right;
+         font-family: 600;
+         }
+         .bill-pay span {
+         font-weight: 600;
+         font-size: 16px;
+         border-bottom: 2px solid #999;
+         }
+         table.tabl1 {
+         border-collapse: collapse;
+         width: 100%;
+         border: 1px solid #931414;
+         }
+         .tabl1 th {
+         border: 1px solid #931414;
+         text-align: left;
+         padding: 3px 8px;
+         }
+         .tabl1 td {
+         border: 1px solid #931414;
+         text-align: left;
+         padding: 3px 8px;
+         }
+         .customer-details {
+         float: left;
+         width: 100%;
+         margin: 10px 0px;
+         }
+         .cus-details1 {
+         float: left;
+         width: 60%;
+         padding-right: 10px;
+         }
+         .cus-details1 table {
+         border-collapse: collapse;
+         width: 100%;
+         border-left: 1px solid #931414;
+         border-right: 1px solid #931414;
+         }
+         .cus-details1 th {
+         border-top: 1px solid #931414;
+         text-align: left;
+         padding: 3px 8px;
+         border-right: none;
+         border-bottom: 1px solid #931414;
+         font-size: 11px;
+         border-left: none;
+         }
+         .customer-details h4 {
+         border-bottom-left-radius: 0px;
+         border-bottom-right-radius: 0px;
+         }
+         .cus-details1 td {
+         border-top: 1px solid #931414;
+         font-size: 15px;
+         text-align: left;
+         padding: 3px 8px;
+         border-bottom: 1px solid #931414;
+         border-left: none;
+         border-right: navajowhite;
+         }
+         .cus-details2 h5 {
+         color: #931414;
+         float: left;
+         width: 100%;
+         padding: 15px 0px;
+         font-size: 15px;
+         font-weight: 600;
+         }
+         .cus-details2 {
+         float: left;
+         width: 40%;
+         }
+         .rend-close {
+         position: relative;
+         float: left;
+         width: 100%;
+         }
+         .cus-details2 p {
+         font-size: 15px;
+         border-left: 1px solid #931414;
+         border-bottom: 1px solid #931414;
+         border-right: 1px solid #931414;
+         padding: 5px;
+         float: left;
+         width: 100%;
+         }
+         .cus-details2 .display-topright {
+         position: absolute;
+         right: -7px;
+         top: 14px;
+         font-size: 15px;
+         }
+         .cus-details2 .button {
+         border: none;
+         display: inline-block;
+         /* padding: 8px 16px; */
+         vertical-align: middle;
+         overflow: hidden;
+         text-decoration: none;
+         color: inherit;
+         background-color: inherit;
+         text-align: center;
+         cursor: pointer;
+         white-space: nowrap;
+         color: #7178aa;
+         /* background: #fff; */
+         border-radius: 50%;
+         padding: 5px;
+         }
+         /* modal-popup-closed */
+         @media (max-width: 760px) {
+         .modal {
+         padding: 20px;
+         }
+         .modal-content {
+         width: 100%;
+         }
+         .tabl1 th {
+         text-align: left;
+         padding: 3px 3px;
+         font-size: 11px;
+         }
+         .bill-pay span {
+         font-weight: 600;
+         font-size: 13px;
+         border-bottom: 2px solid #999;
+         }
+         .cus-details1 {
+         float: left;
+         width: 100%;
+         padding-right: 10px;
+         }
+         .cus-details1 td {
+         font-size: 11px;
+         text-align: left;
+         padding: 3px 4px;
+         font-size: 12px;
+         }
+         .cus-details2 p {
+         font-size: 12px;
+         }
+         .cus-details1 {
+         float: left;
+         width: 100%;
+         padding-right: 0px;
+         }
+         .cus-details2 {
+         float: left;
+         width: 100%;
+         margin: 10px 0px;
+         }
+         .tabl1 td {
+         text-align: left;
+         padding: 3px 3px;
+         font-size: 12px;
+         }
+         .cus-details2 .display-topright {
+         position: absolute;
+         right: -7px;
+         top: 7px;
+         font-size: 20px;
+         bottom: -1px;
+         }
+         .cus-details2 .button {
+         border: none;
+         display: inline-block;
+         vertical-align: middle;
+         overflow: hidden;
+         text-decoration: none;
+         color: inherit;
+         background-color: inherit;
+         text-align: center;
+         cursor: pointer;
+         white-space: nowrap;
+         color: #7178aa;
+         border-radius: 50%;
+         padding: 5px;
+         }
+         }
+      </style>
+      <script>
+         const TOTAL_COLUMN = 5;
+         $(document).on("click", ".move-order-next", function () {
+           var id = $(this).attr("data-id");
+           var order = $("#" + id);
+           var currentCol = parseInt($(order).attr("data-current-column"));
+           var nextCol = parseInt(currentCol) + parseInt(1);
+         
+           if (nextCol > TOTAL_COLUMN) {
+             nextCol = TOTAL_COLUMN;
+           }
+         
+           if (nextCol === 2) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/next",
+               type: "POST",
+               data: {
+                 orderStatusId: 2,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 3) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/next",
+               type: "POST",
+               data: {
+                 orderStatusId: 3,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 4) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/next",
+               type: "POST",
+               data: {
+                 orderStatusId: 4,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 5) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/next",
+               type: "POST",
+               data: {
+                 orderStatusId: 5,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           $(order).attr("data-current-column", nextCol);
+           $(order).prependTo("#column-" + nextCol);
+         });
+         
+         $(document).on("click", ".move-order-prev", function () {
+           var id = $(this).attr("data-id");
+           var order = $("#" + id);
+           var currentCol = parseInt($(order).attr("data-current-column"));
+           var nextCol = parseInt(currentCol) - parseInt(1);
+         
+           if (nextCol < 1) {
+             nextCol = 1;
+           }
+         
+           if (nextCol === 2) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/prev",
+               type: "POST",
+               data: {
+                 orderStatusId: 2,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 3) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/prev",
+               type: "POST",
+               data: {
+                 orderStatusId: 3,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 4) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/prev",
+               type: "POST",
+               data: {
+                 orderStatusId: 4,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           if (nextCol === 5) {
+             $.ajax({
+               url: "http://admin.foodnet.ro/admin/ajax/prev",
+               type: "POST",
+               data: {
+                 orderStatusId: 5,
+                 orderId: id,
+               },
+               
+             });
+             
+           }
+         
+           $(order).attr("data-current-column", nextCol);
+           $(order).prependTo("#column-" + nextCol);
+         });
+      </script>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand">Foodnet</a>
+         <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+               <a class="nav-item nav-link" href="/admin/products"
+                  >Vissza a termékekre</a
+                  >
+            </div>
+         </div>
+      </nav>
+      <h1 class="text-center" style="margin-top: 20px;">Rendeléskezelő</h1>
+      <% if(needDelivery != 0
+         ){ %>
+      <div class="d-flex justify-content-center">  <button
+         type="button"
+         class="btn btn-primary"
+         data-toggle="modal"
+         data-target="#exampleModal"
+         style="margin-top: 5px;"
+         >
+         Új rendelés
+         </button>
+      </div>
+      <% } %>
+      <div class="d-flex justify-content-center">  <button
+         type="button"
+         class="btn btn-primary"
+         id="refresh-column1"
+         style="margin-top: 5px;"
+         >
+         Frissítés
+         </button>
+      </div>
+      <script>
+         $( "#refresh-column1" ).click(function() {
+           location.reload();
+         });
+         
+      </script>
+      <!-- Modal -->
+      <div
+         class="modal fade"
+         id="exampleModal"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true"
+         >
+         <form enctype="multipart/form-data" id="create-order" action="/admin/create-order" method="POST">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Új rendelés létrehozása</h5>
+                     <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                        >
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="userNameFill">Név</label>
+                        <input style="margin-bottom: 3px;"
+                           type="text"
+                           class="form-control"
+                           id="userNameFill"
+                           name="userNameFill"
+                           aria-describedby="emailHelp"
+                           placeholder="Név"
+                           />
+                     </div>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Telefonszám</label>
+                        <input style="margin-bottom: 3px;"
+                           id="phoneNumberFill"
+                           type="text"
+                           name="phoneNumberFill"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Telefonszám"
+                           />
+                     </div>
+                     <ul id="list-group" class="list-group"></ul>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Utca</label>
+                        <input style="margin-bottom: 3px;"
+                           id="streetFill"
+                           name="streetFill"
+                           type="text"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Utca"
+                           />
+                     </div>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Házszám</label>
+                        <input style="margin-bottom: 3px;"
+                           id="houseNumberFill"
+                           type="text"
+                           name="houseNumberFill"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Házszám"
+                           />
+                     </div>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Emelet</label>
+                        <input style="margin-bottom: 3px;"
+                           id="floorFill"
+                           type="text"
+                           name="floorFill"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Emelet"
+                           />
+                     </div>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Ajtószám</label>
+                        <input style="margin-bottom: 3px;"
+                           id="doorNumberFill"
+                           type="text"
+                           name="doorNumberFill"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Ajtószám"
+                           />
+                     </div>
+                     <script>
+                        $(document).ready(function () {
+                            const regex = /[^\d.]|\.(?=.*\.)/g;
+                            const subst = ``;
+                            $("#totalPriceFill").keyup(function () {
+                              const str = this.value;
+                              const result = str.replace(regex, subst);
+                              this.value = result;
+                            });
+                          });
+                     </script>
+                     <div style="padding-bottom: 10px;" class="form-group">
+                        <label for="exampleInputPassword1">Végösszeg</label>
+                        <input style="margin-bottom: 3px;"
+                           id="totalPriceFill"
+                           type="text"
+                           name="totalPriceFill"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="Végösszeg"
+                           />
+                        <p style="padding-top: 5px;">A tizedes csak pont lehet</p>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                        >
+                     Ablak bezárása
+                     </button>
+                     <button type="submit" id="createBox" class="btn btn-success has-icon" ><% if (editing) { %><%=lingua.button_editing %><% } else { %><%= lingua.create_box %><% } %></button>
+                  </div>
+         </form>
+         </div>
+         </div>
+      </div>
+      <script>
+         $(function () {
+           $("#phoneNumberFill").on("input", (e) => {
+             $.ajax({
+               url: "/admin/search-by-phone",
+               type: "POST",
+               data: {
+                 phoneNumberFill: e.target.value,
+               },
+               success: function (data) {
+                 for (let i = 0; i < data.finalResult.length; i++) {
+                   $("#list-group").show();
+                   $(".list-group").append(
+                     `<li id="setValue-${data.finalResult[i].id}" class="list-group-item list-group-item-action"><u>Név</u>: ${data.finalResult[i].name}, <u>helység</u>: ${data.finalResult[i].location}, <u>utca</u>: ${data.finalResult[i].street}, <u>házszám</u>: ${data.finalResult[i].houseNumber}, <u>emelet</u>: ${data.finalResult[i].floor}, <u>ajtószám</u>: ${data.finalResult[i].doorNumber}</li>`
+                   );
+                   $(document).ready(function () {
+                     $(`#setValue-${data.finalResult[i].id}`).click(function () {
+                       console.log("fasz");
+                       $("#userNameFill").val(data.finalResult[i].name);
+                       $("#phoneNumberFill").val(data.finalResult[i].phoneNumber);
+                       $("#streetFill").val(data.finalResult[i].street);
+                       $("#houseNumberFill").val(data.finalResult[i].houseNumber);
+                       $("#floorFill").val(data.finalResult[i].floor);
+                       $("#doorNumberFill").val(data.finalResult[i].doorNumber);
+                       $("#list-group").hide();
+                     });
+                   });
+                 }
+               },
+             });
+           });
+         });
+      </script>
+      <div class="main-container">
+         <div class="container">
+            <div class="main-column">
+               <div class="column1">
+                  <h2>Új rendelések</h2>
+                  <div class="sub-column1" id="column-1">
+                     <% for (let i =0; i < orderfirst.orders.length; i++) { %>
+                     <div
+                        id="<%= orderfirst.orders[i].id %>"
+                        data-id="<%= orderfirst.orders[i].id %>"
+                        data-current-column="1"
+                        class="inner-sub-column"
+                        >
+                        <h4>
+                           <span class="arrow funarrow">
+                           <img
+                              src="../img/right-arrow.png"
+                              class="move-order-next"
+                              data-id="<%= orderfirst.orders[i].id %>"
+                              />
+                           </span>
+                           <p class="encodedKey encodedKey-elkeszitve">
+                              <%= orderfirst.orders[i].encodedKey %>
+                           </p>
+                           <span class="arrow">
+                           <img
+                              src="../img/left-arrow.png"
+                              class="move-order-prev move-order-next-left-elkeszitve"
+                              data-id="<%= orderfirst.orders[i].id %>"
+                              />
+                           </span>
+                        </h4>
+                        <div
+                           class="details"
+                           <% if( orderfirst.orders[i].restaurantAdded  != 1
+                              ){ %> onclick="document.getElementById('id<%= orderfirst.orders[i].id %>').style.display='block'"
+                           class="button black" <% } %>
+                           >
+                           <h3>
+                              <label
+                                 ><%= orderfirst.orders[i].OrderDeliveryAddress.userName
+                                 %></label
+                                 >
+                              <b>|</b
+                                 ><label
+                                 >
+                              <a href="tel:<%= orderfirst.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %>"><%= orderfirst.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %></a>
+                              </label
+                                 >
+                           </h3>
+                           <p>
+                              <%=
+                                 orderfirst.orders[i].LocationName.LocationNameTranslations[0].name
+                                 %>
+                           </p>
+                           <p>
+                              <span>Utca:</span> <%=
+                                 orderfirst.orders[i].OrderDeliveryAddress.street %>
+                           </p>
+                           <p>
+                              <span>Házszám:</span> <%=
+                                 orderfirst.orders[i].OrderDeliveryAddress.houseNumber %>
+                           </p>
+                           <% if(orderfirst.orders[i].OrderDeliveryAddress.floor !== ""
+                              ){ %>
+                           <p>
+                              <span>Emelet:</span> <%=
+                                 orderfirst.orders[i].OrderDeliveryAddress.floor %>
+                           </p>
+                           <% } %> <%
+                              if(orderfirst.orders[i].OrderDeliveryAddress.doorNumber !== ""
+                              ){ %>
+                           <p>
+                              <span>Ajtószám:</span> <%=
+                                 orderfirst.orders[i].OrderDeliveryAddress.doorNumber %>
+                           </p>
+                           <% } %> <% if(orderfirst.orders[i].cutlery == 1){ %>
+                           <h5>Nem kér evőeszközt</h5>
+                           <% } %>
+                           <% if(orderfirst.orders[i].restaurantAdded == 1){ %>
+                           <button  style="margin-top: 4px;
+                              margin-bottom: 3px;">Telefonos rendelés</button>
+                           <% } %>
+                           <h6>Ár: <%= orderfirst.orders[i].totalPrice %> RON</h6>
+                        </div>
+                     </div>
+                     <div id="id<%= orderfirst.orders[i].id %>" class="modal">
+                        <div class="modal-content">
+                           <div class="mains-contain">
+                              <span
+                                 onclick="document.getElementById('id<%= orderfirst.orders[i].id %>').style.display='none'"
+                                 class="button display-topright"
+                                 >&times;</span
+                                 >
+                              <h4>Rendelt termékek</h4>
+                              <% for (let j =0; j < orderfirst.orders[i].products.length;
+                                 j++) { %>
+                              <table class="tabl1">
+                                 <tr>
+                                    <th>Ételek/extrák</th>
+                                    <th>Kategoria</th>
+                                    <th>Db</th>
+                                    <th>Egységár</th>
+                                    <th>Össz ár</th>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].product_name %>
+                                    </td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].variant_sku %>
+                                    </td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].product_price %>
+                                       RON
+                                    </td>
+                                    <td>
+                                       <%= (orderfirst.orders[i].products[j].product_quantity
+                                          *
+                                          orderfirst.orders[i].products[j].product_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% for (let k = 0; k <
+                                    orderfirst.orders[i].products[j].extras.length; ++k) { %>
+                                 <% if(orderfirst.orders[i].products[j].extra_length != 0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       <%=
+                                          orderfirst.orders[i].products[j].extras[k].extra_name
+                                          %> (extra)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                       <%=
+                                          orderfirst.orders[i].products[j].extras[k].extra_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%=
+                                          orderfirst.orders[i].products[j].extras[k].extra_price
+                                          %> RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (orderfirst.orders[i].products[j].extras[k].extra_quantity
+                                          *
+                                          orderfirst.orders[i].products[j].extras[k].extra_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <% } %> <%
+                                    if(orderfirst.orders[i].products[j].boxPrice !=0){ %>
+                                 <tr>
+                                    <td>Csomagolás</td>
+                                    <td></td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].boxPrice %> RON
+                                    </td>
+                                    <td>
+                                       <%= orderfirst.orders[i].products[j].totalBoxPrice %>
+                                       RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <%
+                                    if(orderfirst.orders[i].products[j].message.length !=0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       Speciális kérés: <%=
+                                          orderfirst.orders[i].products[j].message %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <% } %>
+                              </table>
+                              <% } %>
+                              <div class="bill-pay">
+                                 <span
+                                    >Szállítási ár: <%= orderfirst.orders[i].deliveryPrice
+                                    %> RON</span
+                                    >
+                              </div>
+                              <div class="bill-pay">
+                                 <span
+                                    >Teljes összeg: <%= orderfirst.orders[i].totalPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="customer-details">
+                                 <div class="cus-details1">
+                                    <h4>Rendelés adatai</h4>
+                                    <table>
+                                       <tr>
+                                          <td><img src="../img/c1.png" />Megrendelő neve</td>
+                                          <td>
+                                             <%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.userName
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c2.png" />Telefonszám</td>
+                                          <td>
+                                             <a href="tel:<%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %>"><%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %></a>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c3.png" />Település, utca,
+                                             házszám
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfirst.orders[i].LocationName.LocationNameTranslations[0].name
+                                                %>, <%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.street
+                                                %>, <%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.houseNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% if(orderfirst.orders[i].OrderDeliveryAddress.floor
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c4.png" />Emelet</td>
+                                          <td>
+                                             <%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.floor %>
+                                          </td>
+                                       </tr>
+                                       <% } %> <%
+                                          if(orderfirst.orders[i].OrderDeliveryAddress.doorNumber
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c5.png" />Ajtószám</td>
+                                          <td>
+                                             <%=
+                                                orderfirst.orders[i].OrderDeliveryAddress.doorNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c6.png" /> Megrendelés ideje
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfirst.orders[i].createdAt.toLocaleString("en-GB",
+                                                { timeZone: "Europe/Helsinki" }); %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c7.png" />Fizetési mód</td>
+                                          <td><%
+                                             if(orderfirst.orders[i].orderType ==1){ %>
+                                             Készpénz <% } else{ %> Bankkártya a futárnál
+                                             <% } %>
+                                          </td>
+                                       </tr>
+                                       <%
+                                          if(orderfirst.orders[i].take ==1){ %>
+                                       <tr style="background: #931414;
+                                          color: white;">
+                                          <td style="background: #931414;
+                                             color: white;"><img src="../img/alarm.png" />Elvitelre</td>
+                                          <td>
+                                             Igen
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                    </table>
+                                 </div>
+                                 <div class="cus-details2">
+                                    <h4>Megjegyzés a futárnak</h4>
+                                    <p>
+                                       <b>Megjegyzés a futárnak</b>: <%
+                                          if(orderfirst.orders[i].messageCourier.length ==0){ %>
+                                       - <% } else{ %> <%=
+                                          orderfirst.orders[i].messageCourier %> <% } %>
+                                    </p>
+                                    <div class="rend-close">
+                                       <h5 style="cursor:pointer" data-toggle="modal" data-target="#deleteOrder<%= orderfirst.orders[i].id %>">Rendelés törlése</h5>
+                                       <!-- Button trigger modal -->
+                                       <!-- DELETE MODAL -->
+                                       <form 
+                                          id="delete-order"
+                                          class="ms-content-wrapper" 
+                                          action="/admin/delete-order/<%= orderfirst.orders[i].id %>"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                          <div class="modal fade" id="deleteOrder<%= orderfirst.orders[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<%= orderfirst.orders[i].id %>" aria-hidden="true">
+                                             <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel<%= orderfirst.orders[i].id %>"><u><%= orderfirst.orders[i].encodedKey %></u> rendelés törlése</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                      <div class="input-group mb-3">
+                                                         <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-default">Törlés oka</span>
+                                                         </div>
+                                                         <input type="text" name="reject" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                      </div>
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Ablak bezárása</button>
+                                                      <button type="submit" class="btn" style="background: #931414 !important; color: white;">Rendelés törlése</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                       <button
+                                          onclick="document.getElementById('id<%= orderfirst.orders[i].id %>').style.display='none'"
+                                          class="btn-light display-topright"
+                                          >
+                                       Ablak bezárása
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                  </div>
+               </div>
+               <div class="column1">
+                  <h2>Felvett rendelések</h2>
+                  <div id="column-2" class="sub-column2">
+                     <% for (let i =0; i < ordersecond.orders.length; i++) { %>
+                     <div
+                        id="<%= ordersecond.orders[i].id %>"
+                        data-id="<%= ordersecond.orders[i].id %>"
+                        data-current-column="2"
+                        class="inner-sub-column open"
+                        >
+                        <h4>
+                           <span class="arrow funarrow"
+                              ><img
+                              class="move-order-next"
+                              data-id="<%= ordersecond.orders[i].id %>"
+                              src="../img/right-arrow.png"
+                              /></span>
+                           <p class="encodedKey encodedKey-elkeszitve">
+                              <%= ordersecond.orders[i].encodedKey %>
+                           </p>
+                           <span class="arrow"
+                              ><img
+                              class="move-order-prev move-order-next-left-elkeszitve"
+                              data-id="<%= ordersecond.orders[i].id %>"
+                              src="../img/left-arrow.png"
+                              /></span>
+                        </h4>
+                        <div
+                           class="details"
+                           <% if( ordersecond.orders[i].restaurantAdded  != 1
+                              ){ %> onclick="document.getElementById('id<%= ordersecond.orders[i].id %>').style.display='block'"
+                           class="button black" <% } %>
+                           >
+                           <h3>
+                              <label
+                                 ><%= ordersecond.orders[i].OrderDeliveryAddress.userName
+                                 %></label
+                                 >
+                              <b>|</b
+                                 >
+                              <label
+                                 ><a href="tel:<%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %>"> <%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %></a>
+                              </label
+                                 >
+                           </h3>
+                           <p>
+                              <%=
+                                 ordersecond.orders[i].LocationName.LocationNameTranslations[0].name
+                                 %>
+                           </p>
+                           <p>
+                              <span>Utca:</span> <%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.street %>
+                           </p>
+                           <p>
+                              <span>Házszám:</span> <%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.houseNumber %>
+                           </p>
+                           <% if(ordersecond.orders[i].OrderDeliveryAddress.floor !== ""
+                              ){ %>
+                           <p>
+                              <span>Emelet:</span> <%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.floor %>
+                           </p>
+                           <% } %> <%
+                              if(ordersecond.orders[i].OrderDeliveryAddress.doorNumber !==
+                              "" ){ %>
+                           <p>
+                              <span>Ajtószám:</span> <%=
+                                 ordersecond.orders[i].OrderDeliveryAddress.doorNumber %>
+                           </p>
+                           <% } %> <% if(ordersecond.orders[i].cutlery ==1){ %>
+                           <h5>Nem kér evőeszközt</h5>
+                           <% } %>
+                           <% if(ordersecond.orders[i].restaurantAdded == 1){ %>
+                           <button  style="margin-top: 4px;
+                              margin-bottom: 3px;">Telefonos rendelés</button>
+                           <% } %>
+                           <h6>Ár: <%= ordersecond.orders[i].totalPrice %> RON</h6>
+                        </div>
+                     </div>
+                     <div id="id<%= ordersecond.orders[i].id %>" class="modal">
+                        <div class="modal-content">
+                           <div class="mains-contain">
+                              <span
+                                 onclick="document.getElementById('id<%= ordersecond.orders[i].id %>').style.display='none'"
+                                 class="button display-topright"
+                                 >&times;</span
+                                 >
+                              <h4>Rendelt termékek</h4>
+                              <% for (let j =0; j < ordersecond.orders[i].products.length;
+                                 j++) { %>
+                              <table class="tabl1">
+                                 <tr>
+                                    <th>Ételek/extrák</th>
+                                    <th>Kategoria</th>
+                                    <th>Db</th>
+                                    <th>Egységár</th>
+                                    <th>Össz ár</th>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].product_name %>
+                                    </td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].variant_sku %>
+                                    </td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].product_price %>
+                                       RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (ordersecond.orders[i].products[j].product_quantity *
+                                          ordersecond.orders[i].products[j].product_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% for (let k = 0; k <
+                                    ordersecond.orders[i].products[j].extras.length; ++k) { %>
+                                 <% if(ordersecond.orders[i].products[j].extra_length !=
+                                    0){ %>
+                                 <tr>
+                                    <td>
+                                       <%=
+                                          ordersecond.orders[i].products[j].extras[k].extra_name
+                                          %> (extra)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                       <%=
+                                          ordersecond.orders[i].products[j].extras[k].extra_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%=
+                                          ordersecond.orders[i].products[j].extras[k].extra_price
+                                          %> RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (ordersecond.orders[i].products[j].extras[k].extra_quantity
+                                          *
+                                          ordersecond.orders[i].products[j].extras[k].extra_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <% } %> <%
+                                    if(ordersecond.orders[i].products[j].boxPrice !=0){ %>
+                                 <tr>
+                                    <td>Csomagolás</td>
+                                    <td></td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].boxPrice %> RON
+                                    </td>
+                                    <td>
+                                       <%= ordersecond.orders[i].products[j].totalBoxPrice %>
+                                       RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <%
+                                    if(ordersecond.orders[i].products[j].message.length !=0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       Speciális kérés: <%=
+                                          ordersecond.orders[i].products[j].message %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <% } %>
+                              </table>
+                              <% } %>
+                              <div class="bill-pay">
+                                 <span
+                                    >Szállítási ár: <%= ordersecond.orders[i].deliveryPrice
+                                    %> RON</span
+                                    >
+                              </div>
+                              <div class="bill-pay">
+                                 <span
+                                    >Teljes összeg: <%= ordersecond.orders[i].totalPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="customer-details">
+                                 <div class="cus-details1">
+                                    <h4>Rendelés adatai</h4>
+                                    <table>
+                                       <tr>
+                                          <td><img src="../img/c1.png" />Megrendelő neve</td>
+                                          <td>
+                                             <%=
+                                                ordersecond.orders[i].OrderDeliveryAddress.userName
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c2.png" />Telefonszám</td>
+                                          <td><a href="tel:<%=
+                                             ordersecond.orders[i].OrderDeliveryAddress.phoneNumber
+                                             %>"><%=
+                                             ordersecond.orders[i].OrderDeliveryAddress.phoneNumber
+                                             %></a>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c3.png" />Település, utca,
+                                             házszám
+                                          </td>
+                                          <td>
+                                             <%=
+                                                ordersecond.orders[i].LocationName.LocationNameTranslations[0].name
+                                                %>, <%=
+                                                ordersecond.orders[i].OrderDeliveryAddress.street
+                                                %>, <%=
+                                                ordersecond.orders[i].OrderDeliveryAddress.houseNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% if(ordersecond.orders[i].OrderDeliveryAddress.floor
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c4.png" />Emelet</td>
+                                          <td>
+                                             <%=
+                                                ordersecond.orders[i].OrderDeliveryAddress.floor
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %> <%
+                                          if(ordersecond.orders[i].OrderDeliveryAddress.doorNumber
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c5.png" />Ajtószám</td>
+                                          <td>
+                                             <%=
+                                                ordersecond.orders[i].OrderDeliveryAddress.doorNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c6.png" /> Megrendelés ideje
+                                          </td>
+                                          <td>
+                                             <%=
+                                                ordersecond.orders[i].createdAt.toLocaleString("en-GB",
+                                                { timeZone: "Europe/Helsinki" }); %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c7.png" />Fizetési mód</td>
+                                          <td><%
+                                             if(ordersecond.orders[i].orderType ==1){ %>
+                                             Készpénz <% } else{ %> Bankkártya a futárnál
+                                             <% } %>
+                                          </td>
+                                       </tr>
+                                       <%
+                                          if(ordersecond.orders[i].take ==1){ %>
+                                       <tr style="background: #931414;
+                                          color: white;">
+                                          <td style="background: #931414;
+                                             color: white;"><img src="../img/alarm.png" />Elvitelre</td>
+                                          <td>
+                                             Igen
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                    </table>
+                                 </div>
+                                 <div class="cus-details2">
+                                    <h4>Megjegyzés a futárnak</h4>
+                                    <p>
+                                       <b>Megjegyzés a futárnak</b>: <%
+                                          if(ordersecond.orders[i].messageCourier.length ==0){
+                                          %> - <% } else{ %> <%=
+                                          ordersecond.orders[i].messageCourier %> <% } %>
+                                    </p>
+                                    <div class="rend-close">
+                                       <h5 style="cursor:pointer" data-toggle="modal" data-target="#deleteOrder<%= ordersecond.orders[i].id %>">Rendelés törlése</h5>
+                                       <!-- Button trigger modal -->
+                                       <!-- DELETE MODAL -->
+                                       <form 
+                                          id="delete-order"
+                                          class="ms-content-wrapper" 
+                                          action="/admin/delete-order/<%= ordersecond.orders[i].id %>"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                          <div class="modal fade" id="deleteOrder<%= ordersecond.orders[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<%= ordersecond.orders[i].id %>" aria-hidden="true">
+                                             <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel<%= ordersecond.orders[i].id %>"><u><%= ordersecond.orders[i].encodedKey %></u> rendelés törlése</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                      <div class="input-group mb-3">
+                                                         <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-default">Törlés oka</span>
+                                                         </div>
+                                                         <input type="text" name="reject" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                      </div>
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Ablak bezárása</button>
+                                                      <button type="submit" class="btn" style="background: #931414 !important; color: white;">Rendelés törlése</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                       <button
+                                          onclick="document.getElementById('id<%= ordersecond.orders[i].id %>').style.display='none'"
+                                          class="btn-light display-topright"
+                                          >
+                                       Ablak bezárása
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                  </div>
+               </div>
+               <div class="column1">
+                  <h2>Elkészítve</h2>
+                  <div id="column-3" class="sub-column3">
+                     <% for (let i =0; i < orderthird.orders.length; i++) { %>
+                     <div
+                        class="inner-sub-column"
+                        id="<%= orderthird.orders[i].id %>"
+                        data-id="<%= orderthird.orders[i].id %>"
+                        data-current-column="3"
+                        >
+                        <h4>
+                           <span class="arrow funarrow"
+                              ><img
+                              class="move-order-next move-order-next-right-elkeszitve"
+                              data-id="<%= orderthird.orders[i].id %>"
+                              src="../img/right-arrow.png"
+                              /></span>
+                           <p class="encodedKey encodedKey-elkeszitve">
+                              <%= orderthird.orders[i].encodedKey %>
+                           </p>
+                           <span class="arrow"
+                              ><img
+                              class="move-order-prev move-order-next-left-elkeszitve"
+                              data-id="<%= orderthird.orders[i].id %>"
+                              src="../img/left-arrow.png"
+                              /></span>
+                        </h4>
+                        <div
+                           class="details"
+                           <% if( orderthird.orders[i].restaurantAdded  != 1
+                              ){ %> onclick="document.getElementById('id<%= orderthird.orders[i].id %>').style.display='block'"
+                           class="button black" <% } %>
+                           >
+                           <h3>
+                              <label
+                                 ><%= orderthird.orders[i].OrderDeliveryAddress.userName
+                                 %></label
+                                 >
+                              <b>|</b
+                                 ><label
+                                 >
+                              <a href="tel:<%= orderthird.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %>"><%= orderthird.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %></a>
+                              </label
+                                 >
+                           </h3>
+                           <p>
+                              <%=
+                                 orderthird.orders[i].LocationName.LocationNameTranslations[0].name
+                                 %>
+                           </p>
+                           <p>
+                              <span>Utca:</span> <%=
+                                 orderthird.orders[i].OrderDeliveryAddress.street %>
+                           </p>
+                           <p>
+                              <span>Házszám:</span> <%=
+                                 orderthird.orders[i].OrderDeliveryAddress.houseNumber %>
+                           </p>
+                           <% if(orderthird.orders[i].OrderDeliveryAddress.floor !== ""
+                              ){ %>
+                           <p>
+                              <span>Emelet:</span> <%=
+                                 orderthird.orders[i].OrderDeliveryAddress.floor %>
+                           </p>
+                           <% } %> <%
+                              if(orderthird.orders[i].OrderDeliveryAddress.doorNumber !== ""
+                              ){ %>
+                           <p>
+                              <span>Ajtószám:</span> <%=
+                                 orderthird.orders[i].OrderDeliveryAddress.doorNumber %>
+                           </p>
+                           <% } %> <% if(orderthird.orders[i].cutlery ==1){ %>
+                           <h5>Nem kér evőeszközt</h5>
+                           <% } %>
+                           <% if(orderthird.orders[i].restaurantAdded == 1){ %>
+                           <button  style="margin-top: 4px;
+                              margin-bottom: 3px;">Telefonos rendelés</button>
+                           <% } %>
+                           <h6>Ár: <%= orderthird.orders[i].totalPrice %> RON</h6>
+                        </div>
+                     </div>
+                     <div id="id<%= orderthird.orders[i].id %>" class="modal">
+                        <div class="modal-content">
+                           <div class="mains-contain">
+                              <span
+                                 onclick="document.getElementById('id<%= orderthird.orders[i].id %>').style.display='none'"
+                                 class="button display-topright"
+                                 >&times;</span
+                                 >
+                              <h4>Rendelt termékek</h4>
+                              <% for (let j =0; j < orderthird.orders[i].products.length;
+                                 j++) { %>
+                              <table class="tabl1">
+                                 <tr>
+                                    <th>Ételek/extrák</th>
+                                    <th>Kategoria</th>
+                                    <th>Db</th>
+                                    <th>Egységár</th>
+                                    <th>Össz ár</th>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].product_name %>
+                                    </td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].variant_sku %>
+                                    </td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].product_price %>
+                                       RON
+                                    </td>
+                                    <td>
+                                       <%= (orderthird.orders[i].products[j].product_quantity
+                                          *
+                                          orderthird.orders[i].products[j].product_price).toFixed(2)
+                                          %> %> RON
+                                    </td>
+                                 </tr>
+                                 <% for (let k = 0; k <
+                                    orderthird.orders[i].products[j].extras.length; ++k) { %>
+                                 <% if(orderthird.orders[i].products[j].extra_length != 0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       <%=
+                                          orderthird.orders[i].products[j].extras[k].extra_name
+                                          %> (extra)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                       <%=
+                                          orderthird.orders[i].products[j].extras[k].extra_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%=
+                                          orderthird.orders[i].products[j].extras[k].extra_price
+                                          %> RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (orderthird.orders[i].products[j].extras[k].extra_quantity
+                                          *
+                                          orderthird.orders[i].products[j].extras[k].extra_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <% } %> <%
+                                    if(orderthird.orders[i].products[j].boxPrice !=0){ %>
+                                 <tr>
+                                    <td>Csomagolás</td>
+                                    <td></td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].boxPrice %> RON
+                                    </td>
+                                    <td>
+                                       <%= orderthird.orders[i].products[j].totalBoxPrice %>
+                                       RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <%
+                                    if(orderthird.orders[i].products[j].message.length !=0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       Speciális kérés: <%=
+                                          orderthird.orders[i].products[j].message %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <% } %>
+                              </table>
+                              <% } %>
+                              <div class="bill-pay">
+                                 <span
+                                    >Szállítási ár: <%= orderthird.orders[i].deliveryPrice
+                                    %> RON</span
+                                    >
+                              </div>
+                              <div class="bill-pay">
+                                 <span
+                                    >Teljes összeg: <%= orderthird.orders[i].totalPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="customer-details">
+                                 <div class="cus-details1">
+                                    <h4>Rendelés adatai</h4>
+                                    <table>
+                                       <tr>
+                                          <td><img src="../img/c1.png" />Megrendelő neve</td>
+                                          <td>
+                                             <%=
+                                                orderthird.orders[i].OrderDeliveryAddress.userName
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c2.png" />Telefonszám</td>
+                                          <td>
+                                             <a href="tel:<%=
+                                                orderthird.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %>"><%=
+                                                orderthird.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %></a>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c3.png" />Település, utca,
+                                             házszám
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderthird.orders[i].LocationName.LocationNameTranslations[0].name
+                                                %>, <%=
+                                                orderthird.orders[i].OrderDeliveryAddress.street
+                                                %>, <%=
+                                                orderthird.orders[i].OrderDeliveryAddress.houseNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% if(orderthird.orders[i].OrderDeliveryAddress.floor
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c4.png" />Emelet</td>
+                                          <td>
+                                             <%=
+                                                orderthird.orders[i].OrderDeliveryAddress.floor %>
+                                          </td>
+                                       </tr>
+                                       <% } %> <%
+                                          if(orderthird.orders[i].OrderDeliveryAddress.doorNumber
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c5.png" />Ajtószám</td>
+                                          <td>
+                                             <%=
+                                                orderthird.orders[i].OrderDeliveryAddress.doorNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c6.png" /> Megrendelés ideje
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderthird.orders[i].createdAt.toLocaleString("en-GB",
+                                                { timeZone: "Europe/Helsinki" }); %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c7.png" />Fizetési mód</td>
+                                          <td><%
+                                             if(orderthird.orders[i].orderType ==1){ %>
+                                             Készpénz <% } else{ %> Bankkártya a futárnál
+                                             <% } %>
+                                          </td>
+                                       </tr>
+                                       <%
+                                          if(orderthird.orders[i].take ==1){ %>
+                                       <tr style="background: #931414;
+                                          color: white;">
+                                          <td style="background: #931414;
+                                             color: white;"><img src="../img/alarm.png" />Elvitelre</td>
+                                          <td>
+                                             Igen
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                    </table>
+                                 </div>
+                                 <div class="cus-details2">
+                                    <h4>Megjegyzés a futárnak</h4>
+                                    <p>
+                                       <b>Megjegyzés a futárnak</b>: <%
+                                          if(orderthird.orders[i].messageCourier.length ==0){ %>
+                                       - <% } else{ %> <%=
+                                          orderthird.orders[i].messageCourier %> <% } %>
+                                    </p>
+                                    <div class="rend-close">
+                                       <h5 style="cursor:pointer" data-toggle="modal" data-target="#deleteOrder<%= orderthird.orders[i].id %>">Rendelés törlése</h5>
+                                       <!-- Button trigger modal -->
+                                       <!-- DELETE MODAL -->
+                                       <form 
+                                          id="delete-order"
+                                          class="ms-content-wrapper" 
+                                          action="/admin/delete-order/<%= orderthird.orders[i].id %>"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                          <div class="modal fade" id="deleteOrder<%= orderthird.orders[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<%= orderthird.orders[i].id %>" aria-hidden="true">
+                                             <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel<%= orderthird.orders[i].id %>"><u><%= orderthird.orders[i].encodedKey %></u> rendelés törlése</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                      <div class="input-group mb-3">
+                                                         <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-default">Törlés oka</span>
+                                                         </div>
+                                                         <input type="text" name="reject" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                      </div>
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Ablak bezárása</button>
+                                                      <button type="submit" class="btn" style="background: #931414 !important; color: white;">Rendelés törlése</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                       <button
+                                          onclick="document.getElementById('id<%= orderthird.orders[i].id %>').style.display='none'"
+                                          class="btn-light display-topright"
+                                          >
+                                       Ablak bezárása
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                  </div>
+               </div>
+               <div class="column1">
+                  <h2>Odaadva futárnak</h2>
+                  <div id="column-4" class="sub-column4">
+                     <% for (let i =0; i < orderfour.orders.length; i++) { %>
+                     <div
+                        class="inner-sub-column"
+                        id="<%= orderfour.orders[i].id %>"
+                        data-id="<%= orderfour.orders[i].id %>"
+                        data-current-column="4"
+                        >
+                        <h4>
+                           <span class="arrow funarrow"
+                              ><img
+                              class="move-order-next move-order-next-right-elkeszitve"
+                              data-id="<%= orderfour.orders[i].id %>"
+                              src="../img/right-arrow.png"
+                              /></span>
+                           <p class="encodedKey encodedKey-elkeszitve">
+                              <%= orderfour.orders[i].encodedKey %>
+                           </p>
+                           <span class="arrow"
+                              ><img
+                              class="move-order-prev move-order-next-left-elkeszitve"
+                              data-id="<%= orderfour.orders[i].id %>"
+                              src="../img/left-arrow.png"
+                              /></span>
+                        </h4>
+                        <div
+                           class="details"
+                           <% if( orderfour.orders[i].restaurantAdded  != 1
+                              ){ %> onclick="document.getElementById('id<%= orderfour.orders[i].id %>').style.display='block'"
+                           class="button black" <% } %>
+                           >
+                           <h3>
+                              <label
+                                 ><%= orderfour.orders[i].OrderDeliveryAddress.userName
+                                 %></label
+                                 >
+                              <b>|</b
+                                 ><label
+                                 >
+                              <a href="tel:<%= orderfour.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %>"> <%= orderfour.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %></a>
+                              </label
+                                 >
+                           </h3>
+                           <p>
+                              <%=
+                                 orderfour.orders[i].LocationName.LocationNameTranslations[0].name
+                                 %>
+                           </p>
+                           <p>
+                              <span>Utca:</span> <%=
+                                 orderfour.orders[i].OrderDeliveryAddress.street %>
+                           </p>
+                           <p>
+                              <span>Házszám:</span> <%=
+                                 orderfour.orders[i].OrderDeliveryAddress.houseNumber %>
+                           </p>
+                           <% if(orderfour.orders[i].OrderDeliveryAddress.floor !== "" ){
+                              %>
+                           <p>
+                              <span>Emelet:</span> <%=
+                                 orderfour.orders[i].OrderDeliveryAddress.floor %>
+                           </p>
+                           <% } %> <%
+                              if(orderfour.orders[i].OrderDeliveryAddress.doorNumber !== ""
+                              ){ %>
+                           <p>
+                              <span>Ajtószám:</span> <%=
+                                 orderfour.orders[i].OrderDeliveryAddress.doorNumber %>
+                           </p>
+                           <% } %> <% if(orderfour.orders[i].cutlery ==1){ %>
+                           <h5>Nem kér evőeszközt</h5>
+                           <% } %>
+                           <% if(orderfour.orders[i].restaurantAdded == 1){ %>
+                           <button  style="margin-top: 4px;
+                              margin-bottom: 3px;">Telefonos rendelés</button>
+                           <% } %>
+                           <h6>Ár: <%= orderfour.orders[i].totalPrice %> RON</h6>
+                        </div>
+                     </div>
+                     <div id="id<%= orderfour.orders[i].id %>" class="modal">
+                        <div class="modal-content">
+                           <div class="mains-contain">
+                              <span
+                                 onclick="document.getElementById('id<%= orderfour.orders[i].id %>').style.display='none'"
+                                 class="button display-topright"
+                                 >&times;</span
+                                 >
+                              <h4>Rendelt termékek</h4>
+                              <% for (let j =0; j < orderfour.orders[i].products.length;
+                                 j++) { %>
+                              <table class="tabl1">
+                                 <tr>
+                                    <th>Ételek/extrák</th>
+                                    <th>Kategoria</th>
+                                    <th>Db</th>
+                                    <th>Egységár</th>
+                                    <th>Össz ár</th>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].product_name %>
+                                    </td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].variant_sku %>
+                                    </td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].product_price %>
+                                       RON
+                                    </td>
+                                    <td>
+                                       <%= (orderfour.orders[i].products[j].product_quantity
+                                          *
+                                          orderfour.orders[i].products[j].product_price).toFixed(2)
+                                          %> %> RON
+                                    </td>
+                                 </tr>
+                                 <% for (let k = 0; k <
+                                    orderfour.orders[i].products[j].extras.length; ++k) { %>
+                                 <% if(orderfour.orders[i].products[j].extra_length != 0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       <%=
+                                          orderfour.orders[i].products[j].extras[k].extra_name
+                                          %> (extra)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                       <%=
+                                          orderfour.orders[i].products[j].extras[k].extra_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%=
+                                          orderfour.orders[i].products[j].extras[k].extra_price
+                                          %> RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (orderfour.orders[i].products[j].extras[k].extra_quantity
+                                          *
+                                          orderfour.orders[i].products[j].extras[k].extra_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <% } %> <%
+                                    if(orderfour.orders[i].products[j].boxPrice !=0){ %>
+                                 <tr>
+                                    <td>Csomagolás</td>
+                                    <td></td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].boxPrice %> RON
+                                    </td>
+                                    <td>
+                                       <%= orderfour.orders[i].products[j].totalBoxPrice %>
+                                       RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <%
+                                    if(orderfour.orders[i].products[j].message.length !=0){ %>
+                                 <tr>
+                                    <td>
+                                       Speciális kérés: <%=
+                                          orderfour.orders[i].products[j].message %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <% } %>
+                              </table>
+                              <% } %>
+                              <div class="bill-pay">
+                                 <span
+                                    >Szállítási ár: <%= orderfour.orders[i].deliveryPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="bill-pay">
+                                 <span
+                                    >Teljes összeg: <%= orderfour.orders[i].totalPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="customer-details">
+                                 <div class="cus-details1">
+                                    <h4>Rendelés adatai</h4>
+                                    <table>
+                                       <tr>
+                                          <td><img src="../img/c1.png" />Megrendelő neve</td>
+                                          <td>
+                                             <%=
+                                                orderfour.orders[i].OrderDeliveryAddress.userName
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c2.png" />Telefonszám</td>
+                                          <td>
+                                             <a href="tel:<%=
+                                                orderfour.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %>"><%=
+                                                orderfour.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %></a>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c3.png" />Település, utca,
+                                             házszám
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfour.orders[i].LocationName.LocationNameTranslations[0].name
+                                                %>, <%=
+                                                orderfour.orders[i].OrderDeliveryAddress.street
+                                                %>, <%=
+                                                orderfour.orders[i].OrderDeliveryAddress.houseNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% if(orderfour.orders[i].OrderDeliveryAddress.floor
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c4.png" />Emelet</td>
+                                          <td>
+                                             <%= orderfour.orders[i].OrderDeliveryAddress.floor
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %> <%
+                                          if(orderfour.orders[i].OrderDeliveryAddress.doorNumber
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c5.png" />Ajtószám</td>
+                                          <td>
+                                             <%=
+                                                orderfour.orders[i].OrderDeliveryAddress.doorNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c6.png" /> Megrendelés ideje
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfour.orders[i].createdAt.toLocaleString("en-GB",
+                                                { timeZone: "Europe/Helsinki" }); %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c7.png" />Fizetési mód</td>
+                                          <td><%
+                                             if(orderfour.orders[i].orderType ==1){ %>
+                                             Készpénz <% } else{ %> Bankkártya a futárnál
+                                             <% } %>
+                                          </td>
+                                       </tr>
+                                       <%
+                                          if(orderfour.orders[i].take ==1){ %>
+                                       <tr style="background: #931414;
+                                          color: white;">
+                                          <td style="background: #931414;
+                                             color: white;"><img src="../img/alarm.png" />Elvitelre</td>
+                                          <td>
+                                             Igen
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                    </table>
+                                 </div>
+                                 <div class="cus-details2">
+                                    <h4>Megjegyzés a futárnak</h4>
+                                    <p>
+                                       <b>Megjegyzés a futárnak</b>: <%
+                                          if(orderfour.orders[i].messageCourier.length ==0){ %>
+                                       - <% } else{ %> <%= orderfour.orders[i].messageCourier
+                                          %> <% } %>
+                                    </p>
+                                    <div class="rend-close">
+                                       <h5 style="cursor:pointer" data-toggle="modal" data-target="#deleteOrder<%= orderfour.orders[i].id %>">Rendelés törlése</h5>
+                                       <!-- Button trigger modal -->
+                                       <!-- DELETE MODAL -->
+                                       <form 
+                                          id="delete-order"
+                                          class="ms-content-wrapper" 
+                                          action="/admin/delete-order/<%= orderfour.orders[i].id %>"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                          <div class="modal fade" id="deleteOrder<%= orderfour.orders[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<%= orderfour.orders[i].id %>" aria-hidden="true">
+                                             <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel<%= orderfour.orders[i].id %>"><u><%= orderfour.orders[i].encodedKey %></u> rendelés törlése</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                      <div class="input-group mb-3">
+                                                         <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-default">Törlés oka</span>
+                                                         </div>
+                                                         <input type="text" name="reject" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                      </div>
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Ablak bezárása</button>
+                                                      <button type="submit" class="btn" style="background: #931414 !important; color: white;">Rendelés törlése</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                       <button
+                                          onclick="document.getElementById('id<%= orderfour.orders[i].id %>').style.display='none'"
+                                          class="btn-light display-topright"
+                                          >
+                                       Ablak bezárása
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                  </div>
+               </div>
+               <div class="column1">
+                  <h2>Kiszállítva</h2>
+                  <div id="column-5" class="sub-column5">
+                     <% for (let i =0; i < orderfive.orders.length; i++) { %>
+                     <div
+                        class="inner-sub-column"
+                        id="<%= orderfive.orders[i].id %>"
+                        data-id="<%= orderfive.orders[i].id %>"
+                        data-current-column="5"
+                        >
+                        <h4>
+                           <span class="arrow funarrow"
+                              ><img
+                              class="move-order-next"
+                              data-id="<%= orderfive.orders[i].id %>"
+                              src="../img/right-arrow.png"
+                              /></span>
+                           <p class="encodedKey encodedKey-elkeszitve">
+                              <%= orderfive.orders[i].encodedKey %>
+                           </p>
+                           <span class="arrow"
+                              ><img
+                              class="move-order-prev move-order-next-left-elkeszitve"
+                              data-id="<%= orderfive.orders[i].id %>"
+                              src="../img/left-arrow.png"
+                              /></span>
+                        </h4>
+                        <div
+                           class="details"
+                           <% if( orderfive.orders[i].restaurantAdded  != 1
+                              ){ %> onclick="document.getElementById('id<%= orderfive.orders[i].id %>').style.display='block'"
+                           class="button black" <% } %>
+                           >
+                           <h3>
+                              <label
+                                 ><%= orderfive.orders[i].OrderDeliveryAddress.userName
+                                 %></label
+                                 >
+                              <b>|</b
+                                 ><label
+                                 >
+                              <a href="tel:<%= orderfive.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %>"><%= orderfive.orders[i].OrderDeliveryAddress.phoneNumber
+                                 %></a>
+                              </label
+                                 >
+                           </h3>
+                           <p>
+                              <%=
+                                 orderfive.orders[i].LocationName.LocationNameTranslations[0].name
+                                 %>
+                           </p>
+                           <p>
+                              <span>Utca:</span> <%=
+                                 orderfive.orders[i].OrderDeliveryAddress.street %>
+                           </p>
+                           <p>
+                              <span>Házszám:</span> <%=
+                                 orderfive.orders[i].OrderDeliveryAddress.houseNumber %>
+                           </p>
+                           <% if(orderfive.orders[i].OrderDeliveryAddress.floor !== "" ){
+                              %>
+                           <p>
+                              <span>Emelet:</span> <%=
+                                 orderfive.orders[i].OrderDeliveryAddress.floor %>
+                           </p>
+                           <% } %> <%
+                              if(orderfive.orders[i].OrderDeliveryAddress.doorNumber !== ""
+                              ){ %>
+                           <p>
+                              <span>Ajtószám:</span> <%=
+                                 orderfive.orders[i].OrderDeliveryAddress.doorNumber %>
+                           </p>
+                           <% } %> <% if(orderfive.orders[i].cutlery ==1){ %>
+                           <h5>Nem kér evőeszközt</h5>
+                           <% } %>
+                           <% if(orderfive.orders[i].restaurantAdded == 1){ %>
+                           <button  style="margin-top: 4px;
+                              margin-bottom: 3px;">Telefonos rendelés</button>
+                           <% } %>
+                           <h6>Ár: <%= orderfive.orders[i].totalPrice %> RON</h6>
+                        </div>
+                     </div>
+                     <div id="id<%= orderfive.orders[i].id %>" class="modal">
+                        <div class="modal-content">
+                           <div class="mains-contain">
+                              <span
+                                 onclick="document.getElementById('id<%= orderfive.orders[i].id %>').style.display='none'"
+                                 class="button display-topright"
+                                 >&times;</span
+                                 >
+                              <h4>Rendelt termékek</h4>
+                              <% for (let j =0; j < orderfive.orders[i].products.length;
+                                 j++) { %>
+                              <table class="tabl1">
+                                 <tr>
+                                    <th>Ételek/extrák</th>
+                                    <th>Kategoria</th>
+                                    <th>Db</th>
+                                    <th>Egységár</th>
+                                    <th>Össz ár</th>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].product_name %>
+                                    </td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].variant_sku %>
+                                    </td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].product_price %>
+                                       RON
+                                    </td>
+                                    <td>
+                                       <%= (orderfive.orders[i].products[j].product_quantity
+                                          *
+                                          orderfive.orders[i].products[j].product_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% for (let k = 0; k <
+                                    orderfive.orders[i].products[j].extras.length; ++k) { %>
+                                 <% if(orderfive.orders[i].products[j].extra_length != 0){
+                                    %>
+                                 <tr>
+                                    <td>
+                                       <%=
+                                          orderfive.orders[i].products[j].extras[k].extra_name
+                                          %> (extra)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                       <%=
+                                          orderfive.orders[i].products[j].extras[k].extra_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%=
+                                          orderfive.orders[i].products[j].extras[k].extra_price
+                                          %> RON
+                                    </td>
+                                    <td>
+                                       <%=
+                                          (orderfive.orders[i].products[j].extras[k].extra_quantity
+                                          *
+                                          orderfive.orders[i].products[j].extras[k].extra_price).toFixed(2)
+                                          %> RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <% } %> <%
+                                    if(orderfive.orders[i].products[j].boxPrice !=0){ %>
+                                 <tr>
+                                    <td>Csomagolás</td>
+                                    <td></td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].product_quantity
+                                          %>
+                                    </td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].boxPrice %> RON
+                                    </td>
+                                    <td>
+                                       <%= orderfive.orders[i].products[j].totalBoxPrice %>
+                                       RON
+                                    </td>
+                                 </tr>
+                                 <% } %> <%
+                                    if(orderfive.orders[i].products[j].message.length !=0){ %>
+                                 <tr>
+                                    <td>
+                                       Speciális kérés: <%=
+                                          orderfive.orders[i].products[j].message %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <% } %>
+                              </table>
+                              <% } %>
+                              <div class="bill-pay">
+                                 <span
+                                    >Szállítási ár: <%= orderfive.orders[i].deliveryPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="bill-pay">
+                                 <span
+                                    >Teljes összeg: <%= orderfive.orders[i].totalPrice %>
+                                 RON</span
+                                    >
+                              </div>
+                              <div class="customer-details">
+                                 <div class="cus-details1">
+                                    <h4>Rendelés adatai</h4>
+                                    <table>
+                                       <tr>
+                                          <td><img src="../img/c1.png" />Megrendelő neve</td>
+                                          <td>
+                                             <%=
+                                                orderfive.orders[i].OrderDeliveryAddress.userName
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c2.png" />Telefonszám</td>
+                                          <td>
+                                             <a href="tel:<%=
+                                                orderfive.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %>"> <%=
+                                                orderfive.orders[i].OrderDeliveryAddress.phoneNumber
+                                                %></a>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c3.png" />Település, utca,
+                                             házszám
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfive.orders[i].LocationName.LocationNameTranslations[0].name
+                                                %>, <%=
+                                                orderfive.orders[i].OrderDeliveryAddress.street
+                                                %>, <%=
+                                                orderfive.orders[i].OrderDeliveryAddress.houseNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% if(orderfive.orders[i].OrderDeliveryAddress.floor
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c4.png" />Emelet</td>
+                                          <td>
+                                             <%= orderfive.orders[i].OrderDeliveryAddress.floor
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %> <%
+                                          if(orderfive.orders[i].OrderDeliveryAddress.doorNumber
+                                          !== "" ){ %>
+                                       <tr>
+                                          <td><img src="../img/c5.png" />Ajtószám</td>
+                                          <td>
+                                             <%=
+                                                orderfive.orders[i].OrderDeliveryAddress.doorNumber
+                                                %>
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                       <tr>
+                                          <td>
+                                             <img src="../img/c6.png" /> Megrendelés ideje
+                                          </td>
+                                          <td>
+                                             <%=
+                                                orderfive.orders[i].createdAt.toLocaleString("en-GB",
+                                                { timeZone: "Europe/Helsinki" }); %>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td><img src="../img/c7.png" />Fizetési mód</td>
+                                          <td><%
+                                             if(orderfive.orders[i].orderType ==1){ %>
+                                             Készpénz <% } else{ %> Bankkártya a futárnál
+                                             <% } %>
+                                          </td>
+                                       </tr>
+                                       <%
+                                          if(orderfive.orders[i].take ==1){ %>
+                                       <tr style="background: #931414;
+                                          color: white;">
+                                          <td style="background: #931414;
+                                             color: white;"><img src="../img/alarm.png" />Elvitelre</td>
+                                          <td>
+                                             Igen
+                                          </td>
+                                       </tr>
+                                       <% } %>
+                                    </table>
+                                 </div>
+                                 <div class="cus-details2">
+                                    <h4>Megjegyzés a futárnak</h4>
+                                    <p>
+                                       <b>Megjegyzés a futárnak</b>: <%
+                                          if(orderfive.orders[i].messageCourier.length ==0){ %>
+                                       - <% } else{ %> <%= orderfive.orders[i].messageCourier
+                                          %> <% } %>
+                                    </p>
+                                    <div class="rend-close">
+                                       <button
+                                          onclick="document.getElementById('id<%= orderfive.orders[i].id %>').style.display='none'"
+                                          class="btn-light display-topright"
+                                          >
+                                       Ablak bezárása
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

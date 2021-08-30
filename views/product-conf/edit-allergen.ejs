@@ -1,0 +1,83 @@
+
+
+<%- include('../includes/head.ejs') %>
+<%- include('../jQuery-validation/allergen.ejs') %>
+</head>
+<body class="hold-transition sidebar-mini">
+   <form id="createAllergen_form"
+      class="ms-content-wrapper" 
+      action="/admin/<% if (editing) { %>edit-allergen<% } else { %>add-allergen<% } %>"
+      method="POST"
+      enctype="multipart/form-data">
+      <div class="wrapper">
+         <%- include('../includes/nav.ejs') %> <%- include('../includes/aside.ejs')
+            %>
+         <div class="content-wrapper">
+            <section class="content-header">
+               <div class="container-fluid">
+                  <div class="row mb-2">
+                     <div class="col-sm-6">
+                        <h1>Allergén</h1>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="content">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="card card-secondary">
+                           <div class="card-header">
+                              <h3 class="card-title">Allergén adatok megadása</h3>
+                           </div>
+                           <div class="card-body">
+                              <div class="form-group">
+                                 <label for="roName">Allergén román neve</label>
+                                 <input
+                                    type="text"
+                                    class="form-control roName"
+                                    id="roName"
+                                    placeholder="Allergén román neve"
+                                    name="roName"
+                                    value="<% if (editing) { %><%= allergen[0].AllergenTranslations[0].name %><% } %>">
+                                 <span
+                                    class="invalid-feedback"
+                                    id="roName_error_message"
+                                    ></span>
+                              </div>
+                              <div class="form-group">
+                                 <label for="huName">Allergén magyar neve</label>
+                                 <input
+                                    type="text"
+                                    class="form-control huName"
+                                    placeholder="Allergén magyar neve"
+                                    id="huName"
+                                    name="huName"
+                                    value="<% if (editing) { %><%= allergen[0].AllergenTranslations[1].name %><% } %>">
+                                 <span
+                                    class="invalid-feedback"
+                                    id="huName_error_message"
+                                    ></span>
+                              </div>
+                           </div>
+                           <div class="card-footer">
+                              <button name="createCategory" id="createCategory" type="submit" class="btn btn-secondary">
+                              Mentés
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <% if (editing) { %>
+                     <input type="hidden" value="<%= allergenId %>" name="allergenId">
+                     <% } %>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <%- include('../includes/footer.ejs') %>
+         <aside class="control-sidebar control-sidebar-dark">
+         </aside>
+      </div>
+   </form>
+   <%- include('../includes/end.ejs') %>
+

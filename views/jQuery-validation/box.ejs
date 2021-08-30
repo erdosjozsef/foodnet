@@ -1,0 +1,77 @@
+<script>
+  $(function () {
+    $("#sku_error_message").hide();
+
+    $("#price_error_message").hide();
+
+    var error_sku = false;
+
+    var error_price = false;
+
+    $("#sku").focusout(function () {
+      check_sku();
+    });
+
+    $("#price").focusout(function () {
+      check_price();
+    });
+
+    function check_price() {
+      var price = $("#price").val().length;
+
+      if (price < 1 || price > 10) {
+        $(".price").addClass("is-invalid");
+        $("#price_error_message").html("Csomagolás árának megadása kötelező!");
+        $("#price_error_message").show();
+
+        error_price = true;
+      } else {
+        $(".price").removeClass("is-invalid");
+        $("#price_error_message").hide();
+      }
+    }
+
+    function check_sku() {
+      var sku_length = $("#sku").val().length;
+
+      if (sku_length < 1 || sku_length > 50) {
+        $(".sku").addClass("is-invalid");
+        $("#sku_error_message").html("Csomagolás nevének megadása kötelező!");
+        $("#sku_error_message").show();
+        error_sku = true;
+      } else {
+        $(".sku").removeClass("is-invalid");
+        $("#sku_error_message").hide();
+      }
+    }
+
+    $("#createBox_form").submit(function () {
+      error_sku = false;
+
+      error_price = false;
+
+      check_sku();
+      check_price();
+
+      if (error_sku == false && error_price == false) {
+        $("#createBox").prop("disabled", true);
+
+        return true;
+      } else {
+        return false;
+      }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    const regex = /[^\d.]|\.(?=.*\.)/g;
+    const subst = ``;
+    $("#price").keyup(function () {
+      const str = this.value;
+      const result = str.replace(regex, subst);
+      this.value = result;
+    });
+  });
+</script>

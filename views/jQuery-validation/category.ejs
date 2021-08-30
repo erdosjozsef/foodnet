@@ -1,0 +1,118 @@
+<script>
+  $(function () {
+    $("#roName_error_message").hide();
+    $("#huName_error_message").hide();
+    $("#property_error_message").hide();
+
+    var error_roName = false;
+    var error_huName = false;
+    var error_property = false;
+
+    $("#roName").focusout(function () {
+      check_roName();
+    });
+
+    $("#huName").focusout(function () {
+      check_huName();
+    });
+
+    $(".status-checkbox").change(function () {
+      check_property();
+    });
+
+    function check_roName() {
+      var roName_length = $("#roName").val().length;
+
+      if (roName_length < 1 || roName_length > 60) {
+        $(".roName").addClass("is-invalid");
+        $("#roName_error_message").html(
+          "Kategória román nevének megadása kötelező!"
+        );
+        $("#roName_error_message").show();
+        error_roName = true;
+        $("#createCategory").disabled = true;
+      } else {
+        $(".roName").removeClass("is-invalid");
+        $("#roName_error_message").hide();
+        $("#createCategory").removeAttr("disabled");
+      }
+    }
+
+    function check_huName() {
+      var huName_length = $("#huName").val().length;
+
+      if (huName_length < 1 || huName_length > 60) {
+        $(".huName").addClass("is-invalid");
+        $("#huName_error_message").html(
+          "Kategória magyar nevének megadása kötelező!"
+        );
+        $("#huName_error_message").show();
+        error_huName = true;
+        $("#createCategory").disabled = true;
+      } else {
+        $(".huName").removeClass("is-invalid");
+        $("#huName_error_message").hide();
+        $("#createCategory").removeAttr("disabled");
+      }
+    }
+
+    function check_property() {
+      if ($(".status-hidden[value='on']").length != 1) {
+        $(".subCat").addClass("is-invalid");
+        $("#property_error_message").html("1 alkategória megadása kötelező!");
+        $("#property_error_message").show();
+        error_property = true;
+        $("#createCategory").disabled = true;
+      } else {
+        $(".subCat").removeClass("is-invalid");
+        $("#property_error_message").hide();
+        $("#createCategory").removeAttr("disabled");
+      }
+    }
+
+    $("#createCategory_form").submit(function () {
+      error_roName = false;
+      error_huName = false;
+      error_property = false;
+
+      check_roName();
+      check_huName();
+      check_property();
+
+      if (
+        error_roName == false &&
+        error_huName == false &&
+        error_property == false
+      ) {
+        $("#createCategory").prop("disabled", true);
+
+        return true;
+      } else {
+        return false;
+      }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $("#createCategory").one("click", function () {
+        $("#createCategory_form").submit();
+      });
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    $(".status-checkbox").click(function () {
+      var propertyId = $(this).attr("data-propertyId");
+      if ($(this).is(":checked")) {
+        $(".status-" + propertyId).val("on");
+      } else {
+        $(".status-" + propertyId).val("off");
+      }
+    });
+  });
+</script>
